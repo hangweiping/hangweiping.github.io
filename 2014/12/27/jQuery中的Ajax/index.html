@@ -1,12 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery中的Ajax | 活着</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原始ajax的五个步骤
+
+
+准备发送请求 (调用 new XMLHttpRequest())   (readyState == 0)
+打开一个请求  (调用open方法)  (readyState == 1)
+发送请求 (调用send方法,并且接收到响应头)  (readyState == 2)
+开始接受到请求 (readyState == 3)
+接受完成 (readyState == 4)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery中的Ajax">
+<meta property="og:url" content="http://yoursite.com/2014/12/27/jQuery中的Ajax/index.html">
+<meta property="og:site_name" content="活着">
+<meta property="og:description" content="原始ajax的五个步骤
+
+
+准备发送请求 (调用 new XMLHttpRequest())   (readyState == 0)
+打开一个请求  (调用open方法)  (readyState == 1)
+发送请求 (调用send方法,并且接收到响应头)  (readyState == 2)
+开始接受到请求 (readyState == 3)
+接受完成 (readyState == 4)">
+<meta property="og:updated_time" content="2016-06-10T00:33:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery中的Ajax">
+<meta name="twitter:description" content="原始ajax的五个步骤
+
+
+准备发送请求 (调用 new XMLHttpRequest())   (readyState == 0)
+打开一个请求  (调用open方法)  (readyState == 1)
+发送请求 (调用send方法,并且接收到响应头)  (readyState == 2)
+开始接受到请求 (readyState == 3)
+接受完成 (readyState == 4)">
+  
+    <link rel="alternate" href="/atom.xml" title="活着" type="application/atom+xml">
   
   
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">活着</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-jQuery中的Ajax" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
     
-    <entry>
-      <title><![CDATA[jQuery中的Ajax]]></title>
-      <url>http://yoursite.com/2014/12/27/jQuery%E4%B8%AD%E7%9A%84Ajax/</url>
-      <content type="html"><![CDATA[<blockquote>
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery中的Ajax
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2014/12/27/jQuery中的Ajax/" class="article-date"><time datetime="2014-12-27T11:45:24.000Z" itemprop="datePublished">2014-12-27</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a> / <a class="article-category-link" href="/categories/JS/jQuery/">jQuery</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
 <p>原始ajax的五个步骤</p>
 </blockquote>
 <ol>
@@ -87,99 +209,129 @@
 <li>可以多次执行同一个回调函数；</li>
 <li>为多个操作指定回调函数；</li>
 </ol>
-]]></content>
-    </entry>
+
+      
+    </div>
+
     
-    <entry>
-      <title><![CDATA[css设计指南-定位]]></title>
-      <url>http://yoursite.com/2014/12/26/css%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E5%AE%9A%E4%BD%8D/</url>
-      <content type="html"><![CDATA[<p>其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。  </p>
-<a id="more"></a>
-<h2 id="理解盒模型"><a href="#理解盒模型" class="headerlink" title="理解盒模型"></a>理解盒模型</h2><p>每个盒子都有三组属性：  </p>
-<ol>
-<li>外边距(margin)： 可以设置盒子与相邻盒子之间的距离。</li>
-<li>边框(border)： 可以设置边框的宽度、样式和颜色。</li>
-<li><p>内边距(padding)：可以设置盒子内容区和边框之间的距离。<br>一个盒子有四条边，所以这些属性也各有四个属性，分别是上(top)、右(right)、下(bottom)和左(left)，尽管这三组属性共有 12 个属性值，但我们也可以对它们进行简写，这里以margin 为例：  </p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin-top</span>:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin-right</span>:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin</span>-botton:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin-left</span>:<span class="number">1px</span>;</span><br></pre></td></tr></table></figure>
-<p>缩写后的代码如下:<br><code>margin:1px 1px 1px 1px;</code><br>缩写的顺序是<strong>上 -> 右 -> 下 -> 左，顺时针的方向</strong>。相对的边的值相同，则可以省掉，代码如下:</p>
-</li>
-</ol>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span>;<span class="comment">// 四个方向的边距相同，等同于margin:1px 1px 1px 1px;</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span>;<span class="comment">// 上下边距都为1px，左右边距均为2px，等同于margin:1px 2px 1px 2px</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span>;<span class="comment">// 右边距和左边距相同，等同于margin:1px 2px 3px 2px;</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">1px</span> <span class="number">3px</span>;<span class="comment">// 注意，这里虽然上下边距都为1px，但是这里不能缩写。</span></span><br></pre></td></tr></table></figure>
-<h3 id="盒子的边框-border"><a href="#盒子的边框-border" class="headerlink" title="盒子的边框(border)"></a>盒子的边框(border)</h3><p>边框(border)有四个相关属性：</p>
-<ol>
-<li>宽度(border-width)：可以使用 thin、 medium 和 thick 等文本值，也可以使用 除百分比和负值以外 的任何绝对值。</li>
-<li>样式(border-style)：有 none、 hidden、 dotted、 dashed、 solid、 double、 groove、 ridge、 inset 和 outset 等文本值。</li>
-<li>颜色(border-color)：可以使用任何颜色值，包括 rgb、 hsl、十六进制颜色值和颜色关键字。</li>
-<li>圆角(border-radius)：属于 CSS3 新增属性，可使用百分比、相对值和绝对值。<br>CSS 推荐标准并没有明确规定 border-width 的几个文本值的确切宽度，所以实际宽度会因浏览器而异。border-radius 不影响盒子的定位。<h3 id="盒子的内边距-padding"><a href="#盒子的内边距-padding" class="headerlink" title="盒子的内边距(padding)"></a>盒子的内边距(padding)</h3>内边距是盒子内容区与盒子边框之间的距离。在没有设置内边距的情况下，内容紧挨着边框：设置内边距后，内容区与边框有一定的距离(padding 的大小)：<h3 id="盒子外边距-margin"><a href="#盒子外边距-margin" class="headerlink" title="盒子外边距(margin)"></a>盒子外边距(margin)</h3>与内边距和边框相比，外边距就要显得复杂的多了，首先是外边距叠加， 垂直方向上的外边距会叠加 ，例如有三个段落应用了如下规则：</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>由于第一段的下边距与第二段的上边距相邻，你可能会觉得它们两个盒子边框之间的外边距只和是 80px，但实际上是 50px，像这样上下外边距相遇时，它们会相互重叠，直到一个外边距碰到另一个盒子的边框。就上面例子而言，第二段较宽的上外边距会碰到第一段的边框，也就是说较宽的外边距决定两个盒子之间的距离。</p>
-<h3 id="外边距的单位"><a href="#外边距的单位" class="headerlink" title="外边距的单位"></a>外边距的单位</h3><p>在设置段落文本外边距时应该注意，为了避免因增大字号导致段落间外边距不变引起的整体不协调的问题，在设置段落的上下外边距是应该使用 em 单位，这样当字体大小调整时，段落的上下外边距也会根据字体的大小来调整距离，这样页面的整体布局就会比较协调一致，而左右外边距则可以用 px 绝对单位，确保左右外边距不会因字体大小的调整而发生改变，比如可以这么设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">font-size</span>: <span class="number">1em</span>;</span><br><span class="line"><span class="attribute">margin</span>: .<span class="number">75em</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样段落垂直距离就会始终保持字体高度的四分之三的高度，水平外边距不会因字体的调整而发生改变了。</p>
-<h2 id="盒子有多大"><a href="#盒子有多大" class="headerlink" title="盒子有多大"></a>盒子有多大</h2><p>作者在本章介绍了块级元素和行内元素的不同行为。</p>
-<h3 id="没有宽度的盒子"><a href="#没有宽度的盒子" class="headerlink" title="没有宽度的盒子"></a>没有宽度的盒子</h3><p>作者在这一节中专门提到了一个 「没有宽度」的概念：没有显式地设置元素的width 属性。如果不设置块级元素的 width 属性，那么这个属性的默认值就是auto ，结果就是会让元素的宽度扩展到与父元素同宽，对于块级元素和行内元素更具体的介绍请看笔者的上一篇文章 CSS 设计指南 学习笔记 一 。<br><strong>盒模型结论一：</strong><br>没有设置宽度的元素始终会扩展到填满其父元素的宽度为止，添加水平外边距、水平边框和水平内边距都会导致内容宽度的减少，减少量等于水平外边距、水平边框和水平内边距的和。</p>
-<h3 id="有宽度的盒子"><a href="#有宽度的盒子" class="headerlink" title="有宽度的盒子"></a>有宽度的盒子</h3><p><strong>盒模型结论二：</strong><br>为设定了宽度的盒子添加外边距、边框和内边距，会导致盒子扩展的更宽，实际上，盒子的 width 属性设定的只是盒子内容区的宽度，而不是盒子要占据的( margin-left + border-left + padding-left + width + padding-right + border-right + margin-right )水平宽度。<br>所以一定要记住的是，给设定了 width 的元素添加外边距、边框和内边距所展示的行为与默认的 auto 状态下的行为会有截然不同的表现。<br>拓展：<br>但是与布局相关的元素大部分都同时设置了 margin 、 border 、 padding 和width ，这就导致了在布局时的各种计算保证总宽度( margin-left + border-left + padding-left + width + padding-right + border-right + margin-right )保持不变，这样不仅麻烦，有的时候还比较容易出错，为了解决这一问题， CSS3 新增了一个 box-sizing 属性，通过它可以将设置了 width 的元素也设定成具有默认的 auto 状态下的行为。这样就省去了许多计算 width 的时间，同时也不会出错，而且它的浏览器支持情况也是一片大好（ 除了 IE 6 和 IE 7 不支持，其他个别老版本的浏览器需要添加浏览器私有前缀才支持 ）。<br>可以这样使用这个属性：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> *&#123;</span><br><span class="line"><span class="attribute">-webkit-box-sizing</span>: border-box;</span><br><span class="line">   <span class="attribute">-moz-box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="浮动与清除"><a href="#浮动与清除" class="headerlink" title="浮动与清除"></a>浮动与清除</h2><p>浮动和清除是页面布局的一大利剑，分别是 float 和 clear ，浮动可以让原来上下堆叠的块级元素变成左右并列，可以实现文字绕图片排列效果。浮动的元素会脱离常规的文档流，原来紧跟其后的元素会在空间允许的情况下向上提升到与浮动元素平起平坐。如果浮动元素后面有两个段落，而你只想让第一段与浮动元素并列（就算旁边还能放下第二段，也不想让它上来），就可以使用 clear 属性清除浮动。</p>
-<h3 id="围住浮动元素的三种方法"><a href="#围住浮动元素的三种方法" class="headerlink" title="围住浮动元素的三种方法"></a>围住浮动元素的三种方法</h3><p>浮动元素脱离了文档流，所以我们看不到包含它的父元素了，这种情况有时候并不是我们想要的，所以作者在本章介绍了如何围住浮动元素的三种方法。<br><strong>方法一：</strong> 为父元素添加 overflow: hidden; 强制它包围浮动元素。<br>这种方法在某些情况下也不适用，比如通过浮动设置的水平排列的菜单，对其父元素设置 overflow: hidden; 后，尽管父元素围住了它，但是如果菜单有下拉选项的话，当鼠标移动到上面的时候下拉菜单并不会显示，因为设置了 overflow: hidden; ，所以超出父元素范围的内容都被隐藏掉了。  </p>
-<p><strong>方法二：</strong> 同时浮动父元素</p>
-<p>父元素设置浮动后，不管其子元素是否是浮动，父元素都会紧紧地包围住它的子元素，因此需要用 width: 100%; 再让父元素的宽度与浏览器容器同宽。同样，尽管父元素围住了它，但是这样会导致页面中出现大量的浮动元素，而浮动元素有往往不好控制，并不利于页面的布局。</p>
-<p><strong>方法三：</strong> 添加非浮动的清除元素</p>
-<p>第三种强制父元素包含其浮动的子元素的方式就是给父元素的最后添加一个非浮动的子元素，然后清除该子元素，因此父元素一定会包含这个子元素以及前面的浮动元素：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CSS</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line"><span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>尽管这个方法能解决上面提到的两种方法中的问题，但它还不是最好的方法，因为它会在文档中添加无意义的标签，这违反了标签语义化的规则，对搜索引擎并不友好。所以如果你要清楚浮动但既不想浮动父元素又不想对父元素设置 overflow: hidden; 也不想增加无意义的标签的话，可以使用伪元素来清除浮动：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">" "</span>;</span><br><span class="line"><span class="attribute">display</span>: table;</span><br><span class="line"><span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后在父元素中添加 clearfix 类，因为搜索引擎并不会抓取伪元素，所以这种方法并没有增加无意义的标签，这里应该注意的是，CSS3 标准是用两个冒号来区别伪元素和伪类，而 CSS2.1 中不管是伪元素还是伪类都是用单个冒号表示，然而 IE8 并不支持双冒号的伪元素，所以问题就来了，如果你要遵循 CSS3 的标准使用双冒号的话就不兼容 IE8 了，如果使用但冒号的话又不符合 CSS3 标准规范，当然现在大多数还是使用但冒号的，选择哪种还是看个人的选择。</p>
-<h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>CSS 布局的核心是 position 属性，对元素应用这个属性可以相对于它在常规文档流中的位置重新定位， position 属性有 4 个值： static 、 relative 、absolute 和 fixed 。</p>
-<h3 id="静态定位-static"><a href="#静态定位-static" class="headerlink" title="静态定位(static)"></a>静态定位(static)</h3><p>静态定位下的块级元素会在默认文档流中上下堆叠，想要突破 static 定位提供的这种按顺序布局元素的方式，就必须对元素的 position 属性的值改为其他三个值。</p>
-<h3 id="相对定位-relative"><a href="#相对定位-relative" class="headerlink" title="相对定位(relative)"></a>相对定位(relative)</h3><p>所谓的相对定位就是相对于元素原来的位置（static 状态下的位置）进行定位，也就是说在不设置 top 、 right 、 bottom 或 left 的话，和它在默认(static)情况下的表现是相同的，但是如果对它设置了 top 、 right 、 bottom 或 left 的话，就会相对与它默认的位置进行定位。相对定位的元素可以遮住静态(static)定位的元素。可以给 top 和 left 属性设定负值，把元素向上和向左移动。</p>
-<h3 id="绝对定位-absolute"><a href="#绝对定位-absolute" class="headerlink" title="绝对定位(absolute)"></a>绝对定位(absolute)</h3><p>绝对定位跟静态定位和相对定位是绝对不一样的，静态定位和相对定位并不会脱离文档流，会占居原来的位置，而绝对定位会把元素彻底从文档流中拿出来，然后再相对于其他元素（这里的其他元素指的是定位上下文，默认是 body 元素）定位。<br>绝对定位的一个重要的概念就是 定位上下文 ，把元素的 position 属性设定为relative 、 absolute 或 fixed 后，继而可以使用 top 、 right 、bottom 和 left 属性，相对于「另一个元素」移动该元素的位置。这里的「另一个元素」就是该元素的定位上下文。<br>绝对定位的默认定位上下文是 body ，这是因为 body 是标记中所有元素的唯一的祖先元素，而实际上，绝对定位元素的任何祖先元素都可以成为该绝对定位元素的定位上下文，只要把相应的祖先元素的 position 属性的值设定为 relative 即可。</p>
-<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>从完全脱离文档流的角度说，固定定位与绝对定位类似。但不同之处在于，固定定位的定位上下文是视口（浏览器窗口），因此它不会随页面的滚动而移动。最常见的情况是用它来创建不随页面滚动而移动的导航元素。</p>
-<h3 id="定位上下文"><a href="#定位上下文" class="headerlink" title="定位上下文"></a>定位上下文</h3><p>在讲绝对定位的时候，我们了解到绝对定位元素默认的定位上下文是body元素，因为body是标记中所有元素唯一的祖先元素。而实际上， 绝对定位元素的所有祖先元素都可以成为它的定位上下文，只要把相应祖先元素的position设定为relative即可 。<br>只有将元素的position属性设置为relative、absolute、fixed，这个元素的top、right、bottom和left属性才会起作用。<br>设置了内部div的position属性为absolute之后，内部div就会脱离原来的位置，默认相对于body重新定位。<br>设置了外部div的position属性为relative值之后，它就变成了内部div的定位上下文。 此时内部div的top、left属性参照的就是外部div了。如果你再用left和top属性重新定位外部div，内部div也会跟着移动相同的距离，以保住它与外部div之间的位置关系。<br>事实上，只要把元素的外边距和内边距设定好，多数情况下只用默认的静态定位就足以实现页面布局了。很多刚接触CSS的初学者(include myself)都会错误的设定position属性,最终发现从文档流中挪出来的元素很难控制。因此，除非真需要那么做，否则不要轻易修改元素默认的position属性。</p>
-<h2 id="显示属性"><a href="#显示属性" class="headerlink" title="显示属性"></a>显示属性</h2><p>display 属性的值很多，但常用的除了前面提到的控制块级元素、行内元素和行内块级元素的 block 、 inline 和 inline-block 以外，还有一个比较常用的就是 none ，把元素的 display 属性的值设定为 none 后，该元素及所包含在其中的元素，都不会在页面中显示。他们原先战局的所有空间都会被「回收」，就好像相关元素根本不存在一样。<br>与此类似的属性还有 visibility ，这个属性常用的两个值是 visible (默认值) 和 hidden ，把元素的 visibility 属性的值设定成 hidden ，元素会被隐藏，但它还会占据页面中原来的空间位置。<br>笔者觉得有点类似定位中 absolute 和 relative 的感觉，就是 absolute 定位的元素的原来的位置会被「回收」（脱离文档流），就好像元素根本不存在一样（指的是原来占据的位置不存在一样）， relative 定位的元素还会占据页面中原来的空间位置。</p>
-<p><strong>总结</strong>  </p>
-<blockquote>
-<p>本章的内容不少，都是一些很重要的概念，比如盒模型、定位元素、浮动与清除浮动和元素背景属性。</p>
-<ol>
-<li>margin、padding的属性值顺序均为 上右下左</li>
-<li>垂直方向上的margin外边距会叠加，取较大值。水平方向则不会，两者之间间距为两者之间margin外间距之和。</li>
-<li>围住浮动元素的三种方法： 一：为父元素添加overflow:hidden   二：同时浮动父元素   三：添加非浮动的清除元素(写一个class，里面包含clear属性)</li>
-</ol>
-</blockquote>
-]]></content>
-    </entry>
+      
+
     
-    <entry>
-      <title><![CDATA[从右向左阅读r的定义]]></title>
-      <url>http://yoursite.com/2014/12/25/%E4%BB%8E%E5%8F%B3%E5%90%91%E5%B7%A6%E9%98%85%E8%AF%BBr%E7%9A%84%E5%AE%9A%E4%B9%89/</url>
-      <content type="html"><![CDATA[<h3 id="指向指针的引用-从右向左"><a href="#指向指针的引用-从右向左" class="headerlink" title="指向指针的引用(从右向左)"></a>指向指针的引用(从右向左)</h3><p>引用本身不是对象，所以不能定义指向引用的指针，但指针是对象，所以存在对指针的引用  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">42</span>；</span><br><span class="line"><span class="keyword">int</span> *p;      <span class="comment">//p是int 指针</span></span><br><span class="line"><span class="keyword">int</span> *&amp;r = p; <span class="comment">//r是一个对指针p的引用</span></span><br><span class="line">r = &amp;i;      <span class="comment">//r引用了一个指针，因此给r赋值&amp;i就是令p指向i</span></span><br><span class="line">*r = <span class="number">0</span>;      <span class="comment">//解引用r得到i,也就是p指向的对象，将i值改为0</span></span><br></pre></td></tr></table></figure>
- <a id="more"></a>
-<p> 要理解一个变量类型到底是什么，最简单的就是从右向左阅读r的定义，离变量名进的符号对变量的类型有直接的影响。因此r是一个引用，声明符的其余部分用来确定r引用的类型是什么，*说明r引用的是一个指针。最后声明的基本数据类型指出r引用的是一个int指针.</p>
-<h3 id="const指针-从右向左"><a href="#const指针-从右向左" class="headerlink" title="const指针(从右向左)"></a>const指针(从右向左)</h3><p> 所以的指针的类型都要和它所指的对象严格匹配，除了(1)允许令一个指向常量的指针指向一个非常量对象(2)暂时不需知道</p>
- <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">double</span> *ptr = &amp;pi;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> *cptr = &amp;pi;</span><br><span class="line">*cptr = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
-<p>谓指向常量的指针仅仅要求不能通过该指针改变对象的值，而没有规定那个对象的值不能通过其他途径改变</p>
-<hr>
-<p>指针是对象,const修饰符修饰一个变量，则此变量的值在初始化之后无法改变。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> errNumb = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> *<span class="keyword">const</span> curErr = &amp;errNumb;<span class="comment">//curErr将一直指向errNumb</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> pi = <span class="number">3.1415</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> *<span class="keyword">const</span> pip = &amp;pi;<span class="comment">//pip是一个指向常量对象的常量指针</span></span><br></pre></td></tr></table></figure>
-<p> 指针本身是一个常量并不意味着不通过指针修改其所指对象的值，能否这样做完全取决于所指对象的类型.所</p>
-]]></content>
-    </entry>
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/27/jQuery中的Ajax/" data-id="cip903u0x0005tsbebqrn0yq6" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+
+    </footer>
+  </div>
+  
     
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2014/12/24/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    </entry>
-    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2014/12/26/css设计指南-定位/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">css设计指南-定位</span>
+    </a>
+  </li>
   
   
-</search>
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/">C++</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/指针/">指针</a><span class="sidebar-module-list-count">1</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/CSS/">CSS</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/">JS</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/12/">十二月 2014</a><span class="sidebar-module-list-count">4</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2014/12/27/jQuery中的Ajax/">jQuery中的Ajax</a>
+        </li>
+      
+        <li>
+          <a href="/2014/12/26/css设计指南-定位/">css设计指南-定位</a>
+        </li>
+      
+        <li>
+          <a href="/2014/12/25/从右向左阅读r的定义/">从右向左阅读r的定义</a>
+        </li>
+      
+        <li>
+          <a href="/2014/12/24/hello-world/">Hello World</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 hangweiping<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
