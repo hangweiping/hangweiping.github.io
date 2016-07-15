@@ -1,15 +1,123 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>css设计指南-定位 | 活着</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">css设计指南-定位</h1><a id="logo" href="/.">活着</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">css设计指南-定位</h1><div class="post-meta">Dec 26, 2014<span> | </span><span class="category"><a href="/categories/CSS/">CSS</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-thread-key="2014/12/26/css设计指南-定位/" href="/2014/12/26/css设计指南-定位/#comments" class="ds-thread-count"></a><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#理解盒模型"><span class="toc-number">1.</span> <span class="toc-text">理解盒模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子的边框-border"><span class="toc-number">1.1.</span> <span class="toc-text">盒子的边框(border)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子的内边距-padding"><span class="toc-number">1.2.</span> <span class="toc-text">盒子的内边距(padding)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子外边距-margin"><span class="toc-number">1.3.</span> <span class="toc-text">盒子外边距(margin)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#外边距的单位"><span class="toc-number">1.4.</span> <span class="toc-text">外边距的单位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒子有多大"><span class="toc-number">2.</span> <span class="toc-text">盒子有多大</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#没有宽度的盒子"><span class="toc-number">2.1.</span> <span class="toc-text">没有宽度的盒子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有宽度的盒子"><span class="toc-number">2.2.</span> <span class="toc-text">有宽度的盒子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动与清除"><span class="toc-number">3.</span> <span class="toc-text">浮动与清除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#围住浮动元素的三种方法"><span class="toc-number">3.1.</span> <span class="toc-text">围住浮动元素的三种方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定位"><span class="toc-number">4.</span> <span class="toc-text">定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#静态定位-static"><span class="toc-number">4.1.</span> <span class="toc-text">静态定位(static)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相对定位-relative"><span class="toc-number">4.2.</span> <span class="toc-text">相对定位(relative)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#绝对定位-absolute"><span class="toc-number">4.3.</span> <span class="toc-text">绝对定位(absolute)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#固定定位"><span class="toc-number">4.4.</span> <span class="toc-text">固定定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定位上下文"><span class="toc-number">4.5.</span> <span class="toc-text">定位上下文</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#显示属性"><span class="toc-number">5.</span> <span class="toc-text">显示属性</span></a></li></ol></div></div><div class="post-content"><p>其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。  </p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css设计指南-定位 | 活着</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css设计指南-定位">
+<meta property="og:url" content="http://yoursite.com/2014/12/26/css设计指南-定位/index.html">
+<meta property="og:site_name" content="活着">
+<meta property="og:description" content="其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。">
+<meta property="og:updated_time" content="2016-06-09T08:29:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css设计指南-定位">
+<meta name="twitter:description" content="其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+          <li><a class=""
+                 href="/atom.xml">Rss</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">活着</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-css设计指南-定位" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      css设计指南-定位
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2014/12/26/css设计指南-定位/" class="article-date"><time datetime="2014-12-26T10:25:12.000Z" itemprop="datePublished">2014-12-26</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实 HTML 页面中每个元素其实都是一个「盒子」，默认情况下这些盒子的边框不可见，背景也是透明的，所以我们不能直接的看到页面中盒子的结构，但是我们可以借助一些 Web Developer 工具条可以方便地显示盒子的边框和背景，让我们能很直观的看到这些盒子的结构。  </p>
 <a id="more"></a>
 <h2 id="理解盒模型"><a href="#理解盒模型" class="headerlink" title="理解盒模型"></a>理解盒模型</h2><p>每个盒子都有三组属性：  </p>
 <ol>
 <li>外边距(margin)： 可以设置盒子与相邻盒子之间的距离。</li>
 <li>边框(border)： 可以设置边框的宽度、样式和颜色。</li>
 <li><p>内边距(padding)：可以设置盒子内容区和边框之间的距离。<br>一个盒子有四条边，所以这些属性也各有四个属性，分别是上(top)、右(right)、下(bottom)和左(left)，尽管这三组属性共有 12 个属性值，但我们也可以对它们进行简写，这里以margin 为例：  </p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin-top</span>:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin-right</span>:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin</span>-botton:<span class="number">1px</span>;</span><br><span class="line"><span class="attribute">margin-left</span>:<span class="number">1px</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">margin-top</span>:<span class="number">1px</span>;</div><div class="line"><span class="attribute">margin-right</span>:<span class="number">1px</span>;</div><div class="line"><span class="attribute">margin</span>-botton:<span class="number">1px</span>;</div><div class="line"><span class="attribute">margin-left</span>:<span class="number">1px</span>;</div></pre></td></tr></table></figure>
 <p>缩写后的代码如下:<br><code>margin:1px 1px 1px 1px;</code><br>缩写的顺序是<strong>上 -> 右 -> 下 -> 左，顺时针的方向</strong>。相对的边的值相同，则可以省掉，代码如下:</p>
 </li>
 </ol>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span>;<span class="comment">// 四个方向的边距相同，等同于margin:1px 1px 1px 1px;</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span>;<span class="comment">// 上下边距都为1px，左右边距均为2px，等同于margin:1px 2px 1px 2px</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span>;<span class="comment">// 右边距和左边距相同，等同于margin:1px 2px 3px 2px;</span></span><br><span class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">1px</span> <span class="number">3px</span>;<span class="comment">// 注意，这里虽然上下边距都为1px，但是这里不能缩写。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">margin</span>:<span class="number">1px</span>;<span class="comment">// 四个方向的边距相同，等同于margin:1px 1px 1px 1px;</span></div><div class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span>;<span class="comment">// 上下边距都为1px，左右边距均为2px，等同于margin:1px 2px 1px 2px</span></div><div class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">3px</span>;<span class="comment">// 右边距和左边距相同，等同于margin:1px 2px 3px 2px;</span></div><div class="line"><span class="attribute">margin</span>:<span class="number">1px</span> <span class="number">2px</span> <span class="number">1px</span> <span class="number">3px</span>;<span class="comment">// 注意，这里虽然上下边距都为1px，但是这里不能缩写。</span></div></pre></td></tr></table></figure>
 <h3 id="盒子的边框-border"><a href="#盒子的边框-border" class="headerlink" title="盒子的边框(border)"></a>盒子的边框(border)</h3><p>边框(border)有四个相关属性：</p>
 <ol>
 <li>宽度(border-width)：可以使用 thin、 medium 和 thick 等文本值，也可以使用 除百分比和负值以外 的任何绝对值。</li>
@@ -17,21 +125,21 @@
 <li>颜色(border-color)：可以使用任何颜色值，包括 rgb、 hsl、十六进制颜色值和颜色关键字。</li>
 <li>圆角(border-radius)：属于 CSS3 新增属性，可使用百分比、相对值和绝对值。<br>CSS 推荐标准并没有明确规定 border-width 的几个文本值的确切宽度，所以实际宽度会因浏览器而异。border-radius 不影响盒子的定位。<h3 id="盒子的内边距-padding"><a href="#盒子的内边距-padding" class="headerlink" title="盒子的内边距(padding)"></a>盒子的内边距(padding)</h3>内边距是盒子内容区与盒子边框之间的距离。在没有设置内边距的情况下，内容紧挨着边框：设置内边距后，内容区与边框有一定的距离(padding 的大小)：<h3 id="盒子外边距-margin"><a href="#盒子外边距-margin" class="headerlink" title="盒子外边距(margin)"></a>盒子外边距(margin)</h3>与内边距和边框相比，外边距就要显得复杂的多了，首先是外边距叠加， 垂直方向上的外边距会叠加 ，例如有三个段落应用了如下规则：</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line"><span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line"><span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line"><span class="attribute">height</span>:<span class="number">50px</span>;</div><div class="line"><span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;</div><div class="line"><span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line"><span class="attribute">margin-top</span>: <span class="number">50px</span>;</div><div class="line"><span class="attribute">margin-bottom</span>: <span class="number">30px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>由于第一段的下边距与第二段的上边距相邻，你可能会觉得它们两个盒子边框之间的外边距只和是 80px，但实际上是 50px，像这样上下外边距相遇时，它们会相互重叠，直到一个外边距碰到另一个盒子的边框。就上面例子而言，第二段较宽的上外边距会碰到第一段的边框，也就是说较宽的外边距决定两个盒子之间的距离。</p>
-<h3 id="外边距的单位"><a href="#外边距的单位" class="headerlink" title="外边距的单位"></a>外边距的单位</h3><p>在设置段落文本外边距时应该注意，为了避免因增大字号导致段落间外边距不变引起的整体不协调的问题，在设置段落的上下外边距是应该使用 em 单位，这样当字体大小调整时，段落的上下外边距也会根据字体的大小来调整距离，这样页面的整体布局就会比较协调一致，而左右外边距则可以用 px 绝对单位，确保左右外边距不会因字体大小的调整而发生改变，比如可以这么设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">font-size</span>: <span class="number">1em</span>;</span><br><span class="line"><span class="attribute">margin</span>: .<span class="number">75em</span> <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="外边距的单位"><a href="#外边距的单位" class="headerlink" title="外边距的单位"></a>外边距的单位</h3><p>在设置段落文本外边距时应该注意，为了避免因增大字号导致段落间外边距不变引起的整体不协调的问题，在设置段落的上下外边距是应该使用 em 单位，这样当字体大小调整时，段落的上下外边距也会根据字体的大小来调整距离，这样页面的整体布局就会比较协调一致，而左右外边距则可以用 px 绝对单位，确保左右外边距不会因字体大小的调整而发生改变，比如可以这么设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line"><span class="attribute">font-size</span>: <span class="number">1em</span>;</div><div class="line"><span class="attribute">margin</span>: .<span class="number">75em</span> <span class="number">30px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这样段落垂直距离就会始终保持字体高度的四分之三的高度，水平外边距不会因字体的调整而发生改变了。</p>
 <h2 id="盒子有多大"><a href="#盒子有多大" class="headerlink" title="盒子有多大"></a>盒子有多大</h2><p>作者在本章介绍了块级元素和行内元素的不同行为。</p>
 <h3 id="没有宽度的盒子"><a href="#没有宽度的盒子" class="headerlink" title="没有宽度的盒子"></a>没有宽度的盒子</h3><p>作者在这一节中专门提到了一个 「没有宽度」的概念：没有显式地设置元素的width 属性。如果不设置块级元素的 width 属性，那么这个属性的默认值就是auto ，结果就是会让元素的宽度扩展到与父元素同宽，对于块级元素和行内元素更具体的介绍请看笔者的上一篇文章 CSS 设计指南 学习笔记 一 。<br><strong>盒模型结论一：</strong><br>没有设置宽度的元素始终会扩展到填满其父元素的宽度为止，添加水平外边距、水平边框和水平内边距都会导致内容宽度的减少，减少量等于水平外边距、水平边框和水平内边距的和。</p>
 <h3 id="有宽度的盒子"><a href="#有宽度的盒子" class="headerlink" title="有宽度的盒子"></a>有宽度的盒子</h3><p><strong>盒模型结论二：</strong><br>为设定了宽度的盒子添加外边距、边框和内边距，会导致盒子扩展的更宽，实际上，盒子的 width 属性设定的只是盒子内容区的宽度，而不是盒子要占据的( margin-left + border-left + padding-left + width + padding-right + border-right + margin-right )水平宽度。<br>所以一定要记住的是，给设定了 width 的元素添加外边距、边框和内边距所展示的行为与默认的 auto 状态下的行为会有截然不同的表现。<br>拓展：<br>但是与布局相关的元素大部分都同时设置了 margin 、 border 、 padding 和width ，这就导致了在布局时的各种计算保证总宽度( margin-left + border-left + padding-left + width + padding-right + border-right + margin-right )保持不变，这样不仅麻烦，有的时候还比较容易出错，为了解决这一问题， CSS3 新增了一个 box-sizing 属性，通过它可以将设置了 width 的元素也设定成具有默认的 auto 状态下的行为。这样就省去了许多计算 width 的时间，同时也不会出错，而且它的浏览器支持情况也是一片大好（ 除了 IE 6 和 IE 7 不支持，其他个别老版本的浏览器需要添加浏览器私有前缀才支持 ）。<br>可以这样使用这个属性：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> *&#123;</span><br><span class="line"><span class="attribute">-webkit-box-sizing</span>: border-box;</span><br><span class="line">   <span class="attribute">-moz-box-sizing</span>: border-box;</span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> *&#123;</div><div class="line"><span class="attribute">-webkit-box-sizing</span>: border-box;</div><div class="line">   <span class="attribute">-moz-box-sizing</span>: border-box;</div><div class="line"><span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="浮动与清除"><a href="#浮动与清除" class="headerlink" title="浮动与清除"></a>浮动与清除</h2><p>浮动和清除是页面布局的一大利剑，分别是 float 和 clear ，浮动可以让原来上下堆叠的块级元素变成左右并列，可以实现文字绕图片排列效果。浮动的元素会脱离常规的文档流，原来紧跟其后的元素会在空间允许的情况下向上提升到与浮动元素平起平坐。如果浮动元素后面有两个段落，而你只想让第一段与浮动元素并列（就算旁边还能放下第二段，也不想让它上来），就可以使用 clear 属性清除浮动。</p>
 <h3 id="围住浮动元素的三种方法"><a href="#围住浮动元素的三种方法" class="headerlink" title="围住浮动元素的三种方法"></a>围住浮动元素的三种方法</h3><p>浮动元素脱离了文档流，所以我们看不到包含它的父元素了，这种情况有时候并不是我们想要的，所以作者在本章介绍了如何围住浮动元素的三种方法。<br><strong>方法一：</strong> 为父元素添加 overflow: hidden; 强制它包围浮动元素。<br>这种方法在某些情况下也不适用，比如通过浮动设置的水平排列的菜单，对其父元素设置 overflow: hidden; 后，尽管父元素围住了它，但是如果菜单有下拉选项的话，当鼠标移动到上面的时候下拉菜单并不会显示，因为设置了 overflow: hidden; ，所以超出父元素范围的内容都被隐藏掉了。  </p>
 <p><strong>方法二：</strong> 同时浮动父元素</p>
 <p>父元素设置浮动后，不管其子元素是否是浮动，父元素都会紧紧地包围住它的子元素，因此需要用 width: 100%; 再让父元素的宽度与浏览器容器同宽。同样，尽管父元素围住了它，但是这样会导致页面中出现大量的浮动元素，而浮动元素有往往不好控制，并不利于页面的布局。</p>
 <p><strong>方法三：</strong> 添加非浮动的清除元素</p>
-<p>第三种强制父元素包含其浮动的子元素的方式就是给父元素的最后添加一个非浮动的子元素，然后清除该子元素，因此父元素一定会包含这个子元素以及前面的浮动元素：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CSS</span></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line"><span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line"><span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>尽管这个方法能解决上面提到的两种方法中的问题，但它还不是最好的方法，因为它会在文档中添加无意义的标签，这违反了标签语义化的规则，对搜索引擎并不友好。所以如果你要清楚浮动但既不想浮动父元素又不想对父元素设置 overflow: hidden; 也不想增加无意义的标签的话，可以使用伪元素来清除浮动：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">" "</span>;</span><br><span class="line"><span class="attribute">display</span>: table;</span><br><span class="line"><span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>第三种强制父元素包含其浮动的子元素的方式就是给父元素的最后添加一个非浮动的子元素，然后清除该子元素，因此父元素一定会包含这个子元素以及前面的浮动元素：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// CSS</span></div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line"><span class="attribute">float</span>: left;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span> &#123;</div><div class="line"><span class="attribute">clear</span>:both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>尽管这个方法能解决上面提到的两种方法中的问题，但它还不是最好的方法，因为它会在文档中添加无意义的标签，这违反了标签语义化的规则，对搜索引擎并不友好。所以如果你要清楚浮动但既不想浮动父元素又不想对父元素设置 overflow: hidden; 也不想增加无意义的标签的话，可以使用伪元素来清除浮动：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line"><span class="attribute">content</span>: <span class="string">" "</span>;</div><div class="line"><span class="attribute">display</span>: table;</div><div class="line"><span class="attribute">clear</span>: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后在父元素中添加 clearfix 类，因为搜索引擎并不会抓取伪元素，所以这种方法并没有增加无意义的标签，这里应该注意的是，CSS3 标准是用两个冒号来区别伪元素和伪类，而 CSS2.1 中不管是伪元素还是伪类都是用单个冒号表示，然而 IE8 并不支持双冒号的伪元素，所以问题就来了，如果你要遵循 CSS3 的标准使用双冒号的话就不兼容 IE8 了，如果使用但冒号的话又不符合 CSS3 标准规范，当然现在大多数还是使用但冒号的，选择哪种还是看个人的选择。</p>
 <h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><p>CSS 布局的核心是 position 属性，对元素应用这个属性可以相对于它在常规文档流中的位置重新定位， position 属性有 4 个值： static 、 relative 、absolute 和 fixed 。</p>
 <h3 id="静态定位-static"><a href="#静态定位-static" class="headerlink" title="静态定位(static)"></a>静态定位(static)</h3><p>静态定位下的块级元素会在默认文档流中上下堆叠，想要突破 static 定位提供的这种按顺序布局元素的方式，就必须对元素的 position 属性的值改为其他三个值。</p>
@@ -49,19 +157,140 @@
 <li>围住浮动元素的三种方法： 一：为父元素添加overflow:hidden   二：同时浮动父元素   三：添加非浮动的清除元素(写一个class，里面包含clear属性)</li>
 </ol>
 </blockquote>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://yoursite.com/2014/12/26/css设计指南-定位/" data-id="cipzhvjh60005jwbezg04lpdp" class="article-share-link">分享到</a><div class="tags"><a href="/tags/css/">css</a></div><div class="post-nav"><a href="/2014/12/27/jQuery中的Ajax/" class="pre">jQuery中的Ajax</a><a href="/2014/12/25/从右向左阅读r的定义/" class="next">从右向左阅读r的定义</a></div><div data-thread-key="2014/12/26/css设计指南-定位/" data-title="css设计指南-定位" data-url="http://yoursite.com/2014/12/26/css设计指南-定位/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2014/12/26/css设计指南-定位/" data-title="css设计指南-定位" data-url="http://yoursite.com/2014/12/26/css设计指南-定位/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/指针/">指针</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/jQuery/">jQuery</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/查找/" style="font-size: 15px;">查找</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/tags/前端工具/" style="font-size: 15px;">前端工具</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/docker总结/">docker总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/大前端工具集/">大前端工具集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/前端工程构建乱弹/">前端工程构建乱弹</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/01/7大查找算法/">7大查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/30/css文本和字体/">css文本和字体</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/29/markdown语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/27/jQuery中的Ajax/">jQuery中的Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/26/css设计指南-定位/">css设计指南-定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/25/从右向左阅读r的定义/">从右向左阅读r的定义</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/24/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="comments-title"><i class="fa fa-comment-o"> 最近评论</i></div><div data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1" class="ds-recent-comments"></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">活着.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a> by<a rel="nofollow" target="_blank" href="https://github.com/hangweiping"> Hangweiping.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'hanghanghang'};
-(function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0]
-        || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
-if (search_path.length == 0) {
-   search_path = 'search.xml';
-}
-var path = '/' + search_path;
-searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/12/26/css设计指南-定位/" data-id="ciqnk5ylo00040ebeehkrdx8q" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2014/12/25/从右向左阅读r的定义/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">从右向左阅读r的定义</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/2014/12/27/jQuery中的Ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">jQuery中的Ajax</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p>活着总要做点什么，记录一些东西吧！</p>
+
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/">C++</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/指针/">指针</a><span class="sidebar-module-list-count">1</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/CSS/">CSS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/">JS</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/算法/">算法</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">五月 2016</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">四月 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/01/">一月 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/01/">一月 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/12/">十二月 2014</a><span class="sidebar-module-list-count">6</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/2016/05/09/redis入门教程/">redis入门教程</a>
+        </li>
+      
+        <li>
+          <a href="/2016/05/04/docker总结/">docker总结</a>
+        </li>
+      
+        <li>
+          <a href="/2016/04/01/大前端工具集/">大前端工具集</a>
+        </li>
+      
+        <li>
+          <a href="/2016/01/02/前端工程构建乱弹/">前端工程构建乱弹</a>
+        </li>
+      
+        <li>
+          <a href="/2015/01/01/7大查找算法/">7大查找算法</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      &copy; 2016 hangweiping<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
