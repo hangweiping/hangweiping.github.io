@@ -1,126 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Docker安装Gitlab | 活着</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="此文为实践gitlab而成，通篇介绍了Docker下安装 Gitlab CE的过程及注意问题，顺便复习了一些docker和git的命令，由于原文比较简单，故没有翻译。
-
-GitLab Docker images这是镜像GitLab CE docker image,You can also deploy to Docker Cloud using the docker-compose config">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Docker安装Gitlab">
-<meta property="og:url" content="http://yoursite.com/2016/05/16/docker安装gitlab/index.html">
-<meta property="og:site_name" content="活着">
-<meta property="og:description" content="此文为实践gitlab而成，通篇介绍了Docker下安装 Gitlab CE的过程及注意问题，顺便复习了一些docker和git的命令，由于原文比较简单，故没有翻译。
-
-GitLab Docker images这是镜像GitLab CE docker image,You can also deploy to Docker Cloud using the docker-compose config">
-<meta property="og:updated_time" content="2016-07-19T09:04:00.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Docker安装Gitlab">
-<meta name="twitter:description" content="此文为实践gitlab而成，通篇介绍了Docker下安装 Gitlab CE的过程及注意问题，顺便复习了一些docker和git的命令，由于原文比较简单，故没有翻译。
-
-GitLab Docker images这是镜像GitLab CE docker image,You can also deploy to Docker Cloud using the docker-compose config">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="/css/styles.css">
-  
-
-</head>
-
-<body>
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-menu-navbar">
-      <ul class="nav navbar-nav">
-        
-          <li><a class=""
-                 href="/index.html">Home</a></li>
-        
-          <li><a class=""
-                 href="/archives/">Archives</a></li>
-        
-          <li><a class=""
-                 href="/atom.xml">Rss</a></li>
-        
-      </ul>
-
-      <!--
-      <ul class="nav navbar-nav navbar-right">
-        
-      </ul>
-      -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-  <div class="container">
-    <div class="blog-header">
-  <h1 class="blog-title">活着</h1>
-  
-</div>
-
-    <div class="row">
-        <div class="col-sm-8 blog-main">
-          <article id="post-docker安装gitlab" class="article article-type-post" itemscope itemprop="blogPost">
-
-  <header class="article-header">
-    
-  
-    <h1 class="article-title" itemprop="name">
-      Docker安装Gitlab
-    </h1>
-  
-
-
-  </header>
-
-  <div class="article-meta">
-    <div class="article-datetime">
-  <a href="/2016/05/16/docker安装gitlab/" class="article-date"><time datetime="2016-05-16T13:19:26.000Z" itemprop="datePublished">2016-05-16</time></a>
-</div>
-
-    
-    
-
-  </div>
-  <div class="article-inner">
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Docker安装Gitlab | 活着</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.2.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Docker安装Gitlab</h1><a id="logo" href="/.">活着</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Docker安装Gitlab</h1><div class="post-meta">May 16, 2016<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-thread-key="2016/05/16/Docker安装Gitlab/" href="/2016/05/16/Docker安装Gitlab/#comments" class="ds-thread-count"></a><div class="clear"><div id="toc" class="toc-article"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GitLab-Docker-images"><span class="toc-number">1.</span> <span class="toc-text">GitLab Docker images</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-the-image"><span class="toc-number">1.1.</span> <span class="toc-text">Run the image:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#After-starting-a-container"><span class="toc-number">1.2.</span> <span class="toc-text">After starting a container</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Where-is-the-data-stored"><span class="toc-number">1.3.</span> <span class="toc-text">Where is the data stored?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configure-GitLab"><span class="toc-number">1.4.</span> <span class="toc-text">Configure GitLab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run-GitLab-CE-on-public-IP-address"><span class="toc-number">1.5.</span> <span class="toc-text">Run GitLab CE on public IP address</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Expose-GitLab-on-different-ports"><span class="toc-number">1.6.</span> <span class="toc-text">Expose GitLab on different ports</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-GitLab-using-docker-compose"><span class="toc-number">1.7.</span> <span class="toc-text">Install GitLab using docker-compose</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update-GitLab-using-Docker-compose"><span class="toc-number">1.8.</span> <span class="toc-text">Update GitLab using Docker compose</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker命令回顾"><span class="toc-number">2.</span> <span class="toc-text">docker命令回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看docker信息（version、info）"><span class="toc-number">2.1.</span> <span class="toc-text">查看docker信息（version、info）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对image的操作（search、pull、images、rmi、history）"><span class="toc-number">2.2.</span> <span class="toc-text">对image的操作（search、pull、images、rmi、history）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动容器（run）"><span class="toc-number">2.3.</span> <span class="toc-text">启动容器（run）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看容器（ps）"><span class="toc-number">2.4.</span> <span class="toc-text">查看容器（ps）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存对容器的修改（commit）"><span class="toc-number">2.5.</span> <span class="toc-text">保存对容器的修改（commit）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）"><span class="toc-number">2.6.</span> <span class="toc-text">对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存和加载镜像（save、load）"><span class="toc-number">2.7.</span> <span class="toc-text">保存和加载镜像（save、load）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git-初学解决错误"><span class="toc-number">3.</span> <span class="toc-text">git 初学解决错误</span></a></li></ol></div></div><div class="post-content"><blockquote>
 <p>此文为实践gitlab而成，通篇介绍了Docker下安装 Gitlab CE的过程及注意问题，顺便复习了一些docker和git的命令，由于原文比较简单，故没有翻译。</p>
 </blockquote>
-<h2 id="GitLab-Docker-images"><a href="#GitLab-Docker-images" class="headerlink" title="GitLab Docker images"></a>GitLab Docker images</h2><p>这是镜像<a href="https://registry.hub.docker.com/u/gitlab/gitlab-ce/" target="_blank" rel="external">GitLab CE docker image</a>,You can also deploy to Docker Cloud using the <a href="http://docs.gitlab.com/omnibus/docker/#install-gitlab-using-docker-compose" target="_blank" rel="external">docker-compose config</a>。</p>
+<h1 id="GitLab-Docker-images"><a href="#GitLab-Docker-images" class="headerlink" title="GitLab Docker images"></a>GitLab Docker images</h1><p>这是镜像<a href="https://registry.hub.docker.com/u/gitlab/gitlab-ce/" target="_blank" rel="external">GitLab CE docker image</a>,You can also deploy to Docker Cloud using the <a href="http://docs.gitlab.com/omnibus/docker/#install-gitlab-using-docker-compose" target="_blank" rel="external">docker-compose config</a>。</p>
 <a id="more"></a>
-<h3 id="Run-the-image"><a href="#Run-the-image" class="headerlink" title="Run the image:"></a>Run the image:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo docker run --detach \</div><div class="line">    --hostname gitlab.example.com \</div><div class="line">    --publish 443:443 --publish 80:80 --publish 22:22 \</div><div class="line">    --name gitlab \</div><div class="line">    --restart always \</div><div class="line">    --volume /srv/gitlab/config:/etc/gitlab \</div><div class="line">    --volume /srv/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</div><div class="line">    --volume /srv/gitlab/data:/var/opt/gitlab \</div><div class="line">    gitlab/gitlab-ce:latest</div></pre></td></tr></table></figure>
+<h2 id="Run-the-image"><a href="#Run-the-image" class="headerlink" title="Run the image:"></a>Run the image:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo docker run --detach \</div><div class="line">    --hostname gitlab.example.com \</div><div class="line">    --publish 443:443 --publish 80:80 --publish 22:22 \</div><div class="line">    --name gitlab \</div><div class="line">    --restart always \</div><div class="line">    --volume /srv/gitlab/config:/etc/gitlab \</div><div class="line">    --volume /srv/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</div><div class="line">    --volume /srv/gitlab/data:/var/opt/gitlab \</div><div class="line">    gitlab/gitlab-ce:latest</div></pre></td></tr></table></figure>
 <p>This will download and start a GitLab CE container and publish ports needed to access SSH, HTTP and HTTPS. All GitLab data will be stored as subdirectories of /srv/gitlab/. The container will automatically restart after a system reboot.</p>
 <p>You can now login to the web interface as explained in After starting a container.</p>
-<h3 id="After-starting-a-container"><a href="#After-starting-a-container" class="headerlink" title="After starting a container"></a>After starting a container</h3><p>After starting a container you can visit <a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> or <a href="http://192.168.59.103" target="_blank" rel="external">http://192.168.59.103</a> if you use boot2docker. It might take a while before the docker container starts to respond to queries.</p>
+<h2 id="After-starting-a-container"><a href="#After-starting-a-container" class="headerlink" title="After starting a container"></a>After starting a container</h2><p>After starting a container you can visit <a href="http://localhost/" target="_blank" rel="external">http://localhost/</a> or <a href="http://192.168.59.103" target="_blank" rel="external">http://192.168.59.103</a> if you use boot2docker. It might take a while before the docker container starts to respond to queries.</p>
 <p>Login to GitLab with the following credentials:  </p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">username</span>: <span class="built_in">`root`</span>  </div><div class="line"><span class="attribute">password</span>: <span class="built_in">`5iveL!fe`</span></div></pre></td></tr></table></figure>
 <p>Next time, you can just use docker start and stop to run the container.  </p>
-<h3 id="Where-is-the-data-stored"><a href="#Where-is-the-data-stored" class="headerlink" title="Where is the data stored?"></a>Where is the data stored?</h3><p>The GitLab container uses host mounted volumes to store persistent data:</p>
+<h2 id="Where-is-the-data-stored"><a href="#Where-is-the-data-stored" class="headerlink" title="Where is the data stored?"></a>Where is the data stored?</h2><p>The GitLab container uses host mounted volumes to store persistent data:</p>
 <p>Local location    Container location    Usage  </p>
 <table>
 <thead>
@@ -144,7 +34,7 @@ GitLab Docker images这是镜像GitLab CE docker image,You can also deploy to Do
 </tbody>
 </table>
 <p>You can fine tune these directories to meet your requirements.  </p>
-<h3 id="Configure-GitLab"><a href="#Configure-GitLab" class="headerlink" title="Configure GitLab"></a>Configure GitLab</h3><p>This container uses the official Omnibus GitLab package, so all configuration is done in the unique configuration file <code>/etc/gitlab/gitlab.rb</code>.</p>
+<h2 id="Configure-GitLab"><a href="#Configure-GitLab" class="headerlink" title="Configure GitLab"></a>Configure GitLab</h2><p>This container uses the official Omnibus GitLab package, so all configuration is done in the unique configuration file <code>/etc/gitlab/gitlab.rb</code>.</p>
 <p>To access GitLab’s configuration file, you can start a shell session in the context of a running container. This will allow you to browse all directories and use your favorite text editor:</p>
 <p><code>sudo docker exec -it gitlab /bin/bash</code></p>
 <p>You can also just edit <code>/etc/gitlab/gitlab.rb</code>:</p>
@@ -156,169 +46,55 @@ GitLab Docker images这是镜像GitLab CE docker image,You can also deploy to Do
 <p><code>sudo docker restart gitlab</code></p>
 <p>Note: GitLab will reconfigure itself whenever the container starts.</p>
 <p>For more options about configuring GitLab please check the Omnibus GitLab documentation.</p>
-<h3 id="Run-GitLab-CE-on-public-IP-address"><a href="#Run-GitLab-CE-on-public-IP-address" class="headerlink" title="Run GitLab CE on public IP address"></a>Run GitLab CE on public IP address</h3><p>You can make Docker to use your IP address and forward all traffic to the GitLab CE container by modifying the –publish flag.  </p>
+<h2 id="Run-GitLab-CE-on-public-IP-address"><a href="#Run-GitLab-CE-on-public-IP-address" class="headerlink" title="Run GitLab CE on public IP address"></a>Run GitLab CE on public IP address</h2><p>You can make Docker to use your IP address and forward all traffic to the GitLab CE container by modifying the –publish flag.  </p>
 <p>To expose GitLab CE on IP 1.1.1.1:  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo docker run --detach \</div><div class="line">    --hostname gitlab.example.com \</div><div class="line">    --publish 1.1.1.1:443:443 \</div><div class="line">    --publish 1.1.1.1:80:80 \</div><div class="line">    --publish 1.1.1.1:22:22 \</div><div class="line">    --name gitlab \</div><div class="line">    --restart always \</div><div class="line">    --volume /srv/gitlab/config:/etc/gitlab \</div><div class="line">    --volume /srv/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</div><div class="line">    --volume /srv/gitlab/data:/var/opt/gitlab \</div><div class="line">    gitlab/gitlab-ce:latest</div></pre></td></tr></table></figure>
 <p>You can then access your GitLab instance at <a href="http://1.1.1.1/" target="_blank" rel="external">http://1.1.1.1/</a> and <a href="https://1.1.1.1/" target="_blank" rel="external">https://1.1.1.1/</a>.  </p>
-<h3 id="Expose-GitLab-on-different-ports"><a href="#Expose-GitLab-on-different-ports" class="headerlink" title="Expose GitLab on different ports"></a>Expose GitLab on different ports</h3><p>If you want to use a different port than 80 (HTTP) or 443 (HTTPS), you need to add a separate –publish directive to the docker run command.</p>
+<h2 id="Expose-GitLab-on-different-ports"><a href="#Expose-GitLab-on-different-ports" class="headerlink" title="Expose GitLab on different ports"></a>Expose GitLab on different ports</h2><p>If you want to use a different port than 80 (HTTP) or 443 (HTTPS), you need to add a separate –publish directive to the docker run command.</p>
 <p>For example, to expose the web interface on port 8929 and the SSH service on port 2289, use the following docker run command:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo docker run --detach \</div><div class="line">    --hostname gitlab.example.com \</div><div class="line">    --publish 8929:80 --publish 2289:22 \</div><div class="line">    --name gitlab \</div><div class="line">    --restart always \</div><div class="line">    --volume /srv/gitlab/config:/etc/gitlab \</div><div class="line">    --volume /srv/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</div><div class="line">    --volume /srv/gitlab/data:/var/opt/gitlab \</div><div class="line">    gitlab/gitlab-ce:latest</div></pre></td></tr></table></figure>
 <p>You then need to appropriately configure gitlab.rb:</p>
 <p>Set external_url:</p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># <span class="keyword">For</span> HTTP</div><div class="line">external_url <span class="string">"http://gitlab.example.com:8929"</span></div><div class="line"></div><div class="line"># <span class="keyword">For</span> HTTPS</div><div class="line">external_url <span class="string">"https://gitlab.example.com:8929"</span></div><div class="line"><span class="keyword">Set</span> gitlab_shell_ssh_port:</div><div class="line"></div><div class="line">gitlab_rails[<span class="string">'gitlab_shell_ssh_port'</span>] = 2289</div><div class="line">Diagnose <span class="comment">potential problems</span></div><div class="line"></div><div class="line">Read <span class="comment">container logs:</span></div><div class="line"></div><div class="line">sudo <span class="comment">docker logs gitlab</span></div><div class="line">Enter <span class="comment">running container:</span></div><div class="line"></div><div class="line">sudo <span class="comment">docker exec -it gitlab</span> /bin/<span class="comment">bash</span></div></pre></td></tr></table></figure>
 <p>From within the container you can administer the GitLab container as you would normally administer an Omnibus installation</p>
-<h3 id="Install-GitLab-using-docker-compose"><a href="#Install-GitLab-using-docker-compose" class="headerlink" title="Install GitLab using docker-compose"></a>Install GitLab using docker-compose</h3><p>With Docker compose you can easily configure, install, and upgrade your Docker-based GitLab installation.</p>
+<h2 id="Install-GitLab-using-docker-compose"><a href="#Install-GitLab-using-docker-compose" class="headerlink" title="Install GitLab using docker-compose"></a>Install GitLab using docker-compose</h2><p>With Docker compose you can easily configure, install, and upgrade your Docker-based GitLab installation.</p>
 <p>Install Docker Compose<br>Create a docker-compose.yml file (or download an example):  </p>
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">web:</div><div class="line">  image: 'gitlab/gitlab-ce:latest'</div><div class="line">  restart: always</div><div class="line">  hostname: 'gitlab.example.com'</div><div class="line">  environment:</div><div class="line">    GITLAB_OMNIBUS_CONFIG: |</div><div class="line">      external_url 'https://gitlab.example.com'</div><div class="line">      # Add any other gitlab.rb configuration here, each on its own line</div><div class="line">  ports:</div><div class="line">    -<span class="ruby"> <span class="string">'80:80'</span></span></div><div class="line">    -<span class="ruby"> <span class="string">'443:443'</span></span></div><div class="line">    -<span class="ruby"> <span class="string">'22:22'</span></span></div><div class="line">  volumes:</div><div class="line">    -<span class="ruby"> <span class="string">'/srv/gitlab/config:/etc/gitlab'</span></span></div><div class="line">    -<span class="ruby"> <span class="string">'/srv/gitlab/logs:/var/log/gitlab'</span></span></div><div class="line">    -<span class="ruby"> <span class="string">'/srv/gitlab/data:/var/opt/gitlab'</span></span></div></pre></td></tr></table></figure>
 <p>Make sure you are in the same directory as docker-compose.yml and run docker-compose up -d to start GitLab</p>
 <p>Read “Pre-configure Docker container” to see how the GITLAB_OMNIBUS_CONFIG variable works.</p>
 <p>Below is another docker-compose.yml example with GitLab running on a custom HTTP and SSH port. Notice how the GITLAB_OMNIBUS_CONFIG variables match the ports section:</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">we<span class="variable">b:</span></div><div class="line">  image: <span class="string">'gitlab/gitlab-ce:latest'</span></div><div class="line">  restar<span class="variable">t:</span> always</div><div class="line">  <span class="built_in">hostname</span>: <span class="string">'gitlab.example.com'</span></div><div class="line">  environmen<span class="variable">t:</span></div><div class="line">    GITLAB_OMNIBUS_CONFIG: |</div><div class="line">      external_url <span class="string">'http://gitlab.example.com:9090'</span></div><div class="line">      gitlab_rails[<span class="string">'gitlab_shell_ssh_port'</span>] = <span class="number">2224</span></div><div class="line">  port<span class="variable">s:</span></div><div class="line">    - <span class="string">'9090:9090'</span></div><div class="line">    - <span class="string">'2224:22'</span></div><div class="line">  volume<span class="variable">s:</span></div><div class="line">    - <span class="string">'/srv/gitlab/config:/etc/gitlab'</span></div><div class="line">    - <span class="string">'/srv/gitlab/logs:/var/log/gitlab'</span></div><div class="line">    - <span class="string">'/srv/gitlab/data:/var/opt/gitlab'</span></div></pre></td></tr></table></figure>
-<h3 id="Update-GitLab-using-Docker-compose"><a href="#Update-GitLab-using-Docker-compose" class="headerlink" title="Update GitLab using Docker compose"></a>Update GitLab using Docker compose</h3><p>Provided you installed GitLab using docker-compose, all you have to do is run <code>docker-compose pull</code> and <code>docker-compose up -d</code> to download a new release and upgrade your GitLab instance.</p>
-<h2 id="docker命令回顾"><a href="#docker命令回顾" class="headerlink" title="docker命令回顾"></a>docker命令回顾</h2><h3 id="查看docker信息（version、info）"><a href="#查看docker信息（version、info）" class="headerlink" title="查看docker信息（version、info）"></a>查看docker信息（version、info）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看docker版本  </span></div><div class="line">$ docker version  </div><div class="line"><span class="comment"># 显示docker系统的信息  </span></div><div class="line">$ docker info</div></pre></td></tr></table></figure>
-<h3 id="对image的操作（search、pull、images、rmi、history）"><a href="#对image的操作（search、pull、images、rmi、history）" class="headerlink" title="对image的操作（search、pull、images、rmi、history）"></a>对image的操作（search、pull、images、rmi、history）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 检索image  </span></div><div class="line">$ docker search image_name  </div><div class="line"></div><div class="line"><span class="comment"># 下载image  </span></div><div class="line">$ docker pull image_name  </div><div class="line"></div><div class="line"><span class="comment"># 列出镜像列表; -a, --all=false Show all images; --no-trunc=false Don't truncate output; -q, --quiet=false Only show numeric IDs</span></div><div class="line">$ docker images   </div><div class="line"></div><div class="line"><span class="comment"># 删除一个或者多个镜像; -f, --force=false Force; --no-prune=false Do not delete untagged parents</span></div><div class="line">$ docker rmi image_name  </div><div class="line"></div><div class="line"><span class="comment"># 显示一个镜像的历史; --no-trunc=false Don't truncate output; -q, --quiet=false Only show numeric IDs</span></div><div class="line">$ docker <span class="built_in">history</span> image_name</div></pre></td></tr></table></figure>
-<h3 id="启动容器（run）"><a href="#启动容器（run）" class="headerlink" title="启动容器（run）"></a>启动容器（run）</h3><p>docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了该进程运行所必须的资源，包括文件系统、系统类库、shell 环境等等。但这个沙盒默认是不会运行任何程序的。你需要在沙盒中运行一个进程来启动某一个容器。这个进程是该容器的唯一进程，所以当该进程结束的时候，容器也会完全的停止。  </p>
+<h2 id="Update-GitLab-using-Docker-compose"><a href="#Update-GitLab-using-Docker-compose" class="headerlink" title="Update GitLab using Docker compose"></a>Update GitLab using Docker compose</h2><p>Provided you installed GitLab using docker-compose, all you have to do is run <code>docker-compose pull</code> and <code>docker-compose up -d</code> to download a new release and upgrade your GitLab instance.</p>
+<h1 id="docker命令回顾"><a href="#docker命令回顾" class="headerlink" title="docker命令回顾"></a>docker命令回顾</h1><h2 id="查看docker信息（version、info）"><a href="#查看docker信息（version、info）" class="headerlink" title="查看docker信息（version、info）"></a>查看docker信息（version、info）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看docker版本  </span></div><div class="line">$ docker version  </div><div class="line"><span class="comment"># 显示docker系统的信息  </span></div><div class="line">$ docker info</div></pre></td></tr></table></figure>
+<h2 id="对image的操作（search、pull、images、rmi、history）"><a href="#对image的操作（search、pull、images、rmi、history）" class="headerlink" title="对image的操作（search、pull、images、rmi、history）"></a>对image的操作（search、pull、images、rmi、history）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 检索image  </span></div><div class="line">$ docker search image_name  </div><div class="line"></div><div class="line"><span class="comment"># 下载image  </span></div><div class="line">$ docker pull image_name  </div><div class="line"></div><div class="line"><span class="comment"># 列出镜像列表; -a, --all=false Show all images; --no-trunc=false Don't truncate output; -q, --quiet=false Only show numeric IDs</span></div><div class="line">$ docker images   </div><div class="line"></div><div class="line"><span class="comment"># 删除一个或者多个镜像; -f, --force=false Force; --no-prune=false Do not delete untagged parents</span></div><div class="line">$ docker rmi image_name  </div><div class="line"></div><div class="line"><span class="comment"># 显示一个镜像的历史; --no-trunc=false Don't truncate output; -q, --quiet=false Only show numeric IDs</span></div><div class="line">$ docker <span class="built_in">history</span> image_name</div></pre></td></tr></table></figure>
+<h2 id="启动容器（run）"><a href="#启动容器（run）" class="headerlink" title="启动容器（run）"></a>启动容器（run）</h2><p>docker容器可以理解为在沙盒中运行的进程。这个沙盒包含了该进程运行所必须的资源，包括文件系统、系统类库、shell 环境等等。但这个沙盒默认是不会运行任何程序的。你需要在沙盒中运行一个进程来启动某一个容器。这个进程是该容器的唯一进程，所以当该进程结束的时候，容器也会完全的停止。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 在容器中运行"echo"命令，输出"hello word"</span></div><div class="line">$ docker run image_name <span class="built_in">echo</span> <span class="string">"hello word"</span></div><div class="line"></div><div class="line"><span class="comment"># 交互式进入容器中</span></div><div class="line">$ docker run -i -t image_name /bin/bash</div><div class="line"></div><div class="line"><span class="comment"># 在容器中安装新的程序</span></div><div class="line">$ docker run image_name apt-get install -y app_name</div></pre></td></tr></table></figure>
 <p>Note：  在执行apt-get 命令的时候，要带上-y参数。如果不指定-y参数的话，apt-get命令会进入交互模式，需要用户输入命令来进行确认，但在docker环境中是无法响应这种交互的。apt-get 命令执行完毕之后，容器就会停止，但对容器的改动不会丢失。</p>
-<h3 id="查看容器（ps）"><a href="#查看容器（ps）" class="headerlink" title="查看容器（ps）"></a>查看容器（ps）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 列出当前所有正在运行的container</span></div><div class="line">$ docker ps  </div><div class="line"><span class="comment"># 列出所有的container  </span></div><div class="line">$ docker ps <span class="_">-a</span>  </div><div class="line"><span class="comment"># 列出最近一次启动的container  </span></div><div class="line">$ docker ps <span class="_">-l</span></div></pre></td></tr></table></figure>
-<h3 id="保存对容器的修改（commit）"><a href="#保存对容器的修改（commit）" class="headerlink" title="保存对容器的修改（commit）"></a>保存对容器的修改（commit）</h3><p>当你对某一个容器做了修改之后（通过在容器中运行某一个命令），可以把对容器的修改保存下来，这样下次可以从保存后的最新状态运行该容器。  </p>
+<h2 id="查看容器（ps）"><a href="#查看容器（ps）" class="headerlink" title="查看容器（ps）"></a>查看容器（ps）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 列出当前所有正在运行的container</span></div><div class="line">$ docker ps  </div><div class="line"><span class="comment"># 列出所有的container  </span></div><div class="line">$ docker ps <span class="_">-a</span>  </div><div class="line"><span class="comment"># 列出最近一次启动的container  </span></div><div class="line">$ docker ps <span class="_">-l</span></div></pre></td></tr></table></figure>
+<h2 id="保存对容器的修改（commit）"><a href="#保存对容器的修改（commit）" class="headerlink" title="保存对容器的修改（commit）"></a>保存对容器的修改（commit）</h2><p>当你对某一个容器做了修改之后（通过在容器中运行某一个命令），可以把对容器的修改保存下来，这样下次可以从保存后的最新状态运行该容器。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 保存对容器的修改; -a, --author="" Author; -m, --message="" Commit message  </span></div><div class="line">$ docker commit ID new_image_name</div></pre></td></tr></table></figure>
 <p>Note：  image相当于类，container相当于实例，不过可以动态给实例安装新软件，然后把这个container用commit命令固化成一个image。</p>
-<h3 id="对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）"><a href="#对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）" class="headerlink" title="对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）"></a>对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 删除所有容器  </span></div><div class="line">$ docker rm `docker ps <span class="_">-a</span> -q`  </div><div class="line"></div><div class="line"><span class="comment"># 删除单个容器; -f, --force=false; -l, --link=false Remove the specified link and not the underlying container; -v, --volumes=false Remove the volumes associated to the container</span></div><div class="line">$ docker rm Name/ID  </div><div class="line"></div><div class="line"><span class="comment"># 停止、启动、杀死一个容器</span></div><div class="line">$ docker stop Name/ID</div><div class="line">$ docker start Name/ID</div><div class="line">$ docker <span class="built_in">kill</span> Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 从一个容器中取日志; -f, --follow=false Follow log output; -t, --timestamps=false Show timestamps</span></div><div class="line">$ docker logs Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 列出一个容器里面被改变的文件或者目录，list列表会显示出三种事件，A 增加的，D 删除的，C 被改变的</span></div><div class="line">$ docker diff Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 显示一个运行的容器里面的进程信息</span></div><div class="line">$ docker top Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 从容器里面拷贝文件/目录到本地一个路径</span></div><div class="line">$ docker cp Name:/container_path to_path</div><div class="line">$ docker cp ID:/container_path to_path</div><div class="line"></div><div class="line"><span class="comment"># 重启一个正在运行的容器; -t, --time=10 Number of seconds to try to stop for before killing the container, Default=10</span></div><div class="line">$ docker restart Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 附加到一个运行的容器上面; --no-stdin=false Do not attach stdin; --sig-proxy=true Proxify all received signal to the process</span></div><div class="line">$ docker attach ID</div></pre></td></tr></table></figure>
+<h2 id="对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）"><a href="#对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）" class="headerlink" title="对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）"></a>对容器的操作（rm、stop、start、kill、logs、diff、top、cp、restart、attach）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 删除所有容器  </span></div><div class="line">$ docker rm `docker ps <span class="_">-a</span> -q`  </div><div class="line"></div><div class="line"><span class="comment"># 删除单个容器; -f, --force=false; -l, --link=false Remove the specified link and not the underlying container; -v, --volumes=false Remove the volumes associated to the container</span></div><div class="line">$ docker rm Name/ID  </div><div class="line"></div><div class="line"><span class="comment"># 停止、启动、杀死一个容器</span></div><div class="line">$ docker stop Name/ID</div><div class="line">$ docker start Name/ID</div><div class="line">$ docker <span class="built_in">kill</span> Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 从一个容器中取日志; -f, --follow=false Follow log output; -t, --timestamps=false Show timestamps</span></div><div class="line">$ docker logs Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 列出一个容器里面被改变的文件或者目录，list列表会显示出三种事件，A 增加的，D 删除的，C 被改变的</span></div><div class="line">$ docker diff Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 显示一个运行的容器里面的进程信息</span></div><div class="line">$ docker top Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 从容器里面拷贝文件/目录到本地一个路径</span></div><div class="line">$ docker cp Name:/container_path to_path</div><div class="line">$ docker cp ID:/container_path to_path</div><div class="line"></div><div class="line"><span class="comment"># 重启一个正在运行的容器; -t, --time=10 Number of seconds to try to stop for before killing the container, Default=10</span></div><div class="line">$ docker restart Name/ID</div><div class="line"></div><div class="line"><span class="comment"># 附加到一个运行的容器上面; --no-stdin=false Do not attach stdin; --sig-proxy=true Proxify all received signal to the process</span></div><div class="line">$ docker attach ID</div></pre></td></tr></table></figure>
 <p>Note： attach命令允许你查看或者影响一个运行的容器。你可以在同一时间attach同一个容器。你也可以从一个容器中脱离出来，是从CTRL-C。</p>
-<h3 id="保存和加载镜像（save、load）"><a href="#保存和加载镜像（save、load）" class="headerlink" title="保存和加载镜像（save、load）"></a>保存和加载镜像（save、load）</h3><p>当需要把一台机器上的镜像迁移到另一台机器的时候，需要保存镜像与加载镜像。  </p>
+<h2 id="保存和加载镜像（save、load）"><a href="#保存和加载镜像（save、load）" class="headerlink" title="保存和加载镜像（save、load）"></a>保存和加载镜像（save、load）</h2><p>当需要把一台机器上的镜像迁移到另一台机器的时候，需要保存镜像与加载镜像。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 保存镜像到一个tar包; -o, --output="" Write to an file</span></div><div class="line">$ docker save image_name -o file_path</div><div class="line"><span class="comment"># 加载一个tar包格式的镜像; -i, --input="" Read from a tar archive file</span></div><div class="line">$ docker load -i file_path</div><div class="line"></div><div class="line"><span class="comment"># 机器a</span></div><div class="line">$ docker save image_name &gt; /home/save.tar</div><div class="line"><span class="comment"># 使用scp将save.tar拷到机器b上，然后：</span></div><div class="line">$ docker load &lt; /home/save.tar</div></pre></td></tr></table></figure>
-<h2 id="git-初学解决错误"><a href="#git-初学解决错误" class="headerlink" title="git 初学解决错误"></a>git 初学解决错误</h2><p>error: src refspec master does not match any.<br>引起该错误的原因是，目录中没有文件，空目录是不能提交上去的  </p>
+<h1 id="git-初学解决错误"><a href="#git-初学解决错误" class="headerlink" title="git 初学解决错误"></a>git 初学解决错误</h1><p>error: src refspec master does not match any.<br>引起该错误的原因是，目录中没有文件，空目录是不能提交上去的  </p>
 <p>error: insufficient permission for adding an object to repository database ./objects<br>服务端没有可写目录的权限  </p>
 <p>错误提示：fatal: remote origin already exists.<br>解决办法：$ git remote rm origin  </p>
 <p>错误提示：error: failed to push som refs to ……..<br>解决办法：$ git pull origin master //先pull 下来 再push 上去  </p>
-
-      
-    </div>
-
-    
-      
-
-    
-
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/16/docker安装gitlab/" data-id="ciqt8hmwm0001z7bequjom327" class="article-share-link">
-        <i class="fa fa-share"></i> Share
-      </a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitlab/">gitlab</a></li></ul>
-
-
-    </footer>
-  </div>
-  
-    
-<ul id="article-nav" class="nav nav-pills nav-justified">
-  
-  <li role="presentation">
-    <a href="/2016/05/09/redis入门教程/" id="article-nav-older" class="article-nav-link-wrap">
-      <i class="fa fa-chevron-left pull-left"></i>
-      <span class="article-nav-link-title">redis入门教程</span>
-    </a>
-  </li>
-  
-  
-</ul>
-
-
-  
-</article>
-
-
-
-
-        </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          
-  <div class="sidebar-module sidebar-module-inset">
-  <h4>About</h4>
-  <p>活着总要做点什么，记录一些东西吧！</p>
-
-</div>
-
-
-  
-  <div class="sidebar-module">
-    <h4>Categories</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/">C++</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/C/指针/">指针</a><span class="sidebar-module-list-count">1</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/CSS/">CSS</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/">JS</a><span class="sidebar-module-list-count">1</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/JS/jQuery/">jQuery</a><span class="sidebar-module-list-count">1</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/算法/">算法</a><span class="sidebar-module-list-count">1</span></li></ul>
-  </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Tag Cloud</h4>
-    <p class="tagcloud">
-      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/docker/" style="font-size: 20px;">docker</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/gitlab/" style="font-size: 10px;">gitlab</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端工具/" style="font-size: 10px;">前端工具</a> <a href="/tags/数据库/" style="font-size: 10px;">数据库</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a>
-    </p>
-  </div>
-
-
-  
-  <div class="sidebar-module">
-    <h4>Archives</h4>
-    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/05/">五月 2016</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/04/">四月 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/01/">一月 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/01/">一月 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/12/">十二月 2014</a><span class="sidebar-module-list-count">6</span></li></ul>
-  </div>
-
-
-
-  
-  <div class="sidebar-module">
-    <h4>Recents</h4>
-    <ul class="sidebar-module-list">
-      
-        <li>
-          <a href="/2016/05/16/docker安装gitlab/">Docker安装Gitlab</a>
-        </li>
-      
-        <li>
-          <a href="/2016/05/09/redis入门教程/">redis入门教程</a>
-        </li>
-      
-        <li>
-          <a href="/2016/05/06/git笔记/">git笔记</a>
-        </li>
-      
-        <li>
-          <a href="/2016/05/04/docker总结/">docker总结</a>
-        </li>
-      
-        <li>
-          <a href="/2016/04/01/大前端工具集/">大前端工具集</a>
-        </li>
-      
-    </ul>
-  </div>
-
-
-
-        </div>
-    </div>
-  </div>
-  <footer class="blog-footer">
-  <div class="container">
-    <div id="footer-info" class="inner">
-      &copy; 2016 hangweiping<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-  
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-
-<script src="/js/script.js"></script>
-
-</body>
-</html>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://yoursite.com/2016/05/16/Docker安装Gitlab/" data-id="ciqtbvjqy0000g6beosudeu7v" class="article-share-link">分享到</a><div class="tags"><a href="/tags/docker/">docker</a><a href="/tags/gitlab/">gitlab</a><a href="/tags/git/">git</a></div><div class="post-nav"><a href="/2016/05/09/redis入门教程/" class="next">redis入门教程</a></div><div data-thread-key="2016/05/16/Docker安装Gitlab/" data-title="Docker安装Gitlab" data-url="http://yoursite.com/2016/05/16/Docker安装Gitlab/" class="ds-share flat"><div class="ds-share-inline"><ul class="ds-share-icons-16"><li data-toggle="ds-share-icons-more"><a href="javascript:void(0);" class="ds-more">分享到：</a></li><li><a href="javascript:void(0);" data-service="weibo" class="ds-weibo">微博</a></li><li><a href="javascript:void(0);" data-service="qzone" class="ds-qzone">QQ空间</a></li><li><a href="javascript:void(0);" data-service="qqt" class="ds-qqt">腾讯微博</a></li><li><a href="javascript:void(0);" data-service="wechat" class="ds-wechat">微信</a></li></ul><div class="ds-share-icons-more"></div></div></div><div data-thread-key="2016/05/16/Docker安装Gitlab/" data-title="Docker安装Gitlab" data-url="http://yoursite.com/2016/05/16/Docker安装Gitlab/" data-author-key="1" class="ds-thread"></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/指针/">指针</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/jQuery/">jQuery</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/markdown/" style="font-size: 15px;">markdown</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/查找/" style="font-size: 15px;">查找</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/gitlab/" style="font-size: 15px;">gitlab</a> <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/前端/" style="font-size: 15px;">前端</a> <a href="/tags/前端工具/" style="font-size: 15px;">前端工具</a> <a href="/tags/redis/" style="font-size: 15px;">redis</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最新文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/05/16/Docker安装Gitlab/">Docker安装Gitlab</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/09/redis入门教程/">redis入门教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/git笔记/">git笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/docker总结/">docker总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/大前端工具集/">大前端工具集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/前端工程构建乱弹/">前端工程构建乱弹</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/01/7大查找算法/">7大查找算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/30/css文本和字体/">css文本和字体</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/29/markdown语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2014/12/27/jQuery中的Ajax/">jQuery中的Ajax</a></li></ul></div><div class="widget"><div class="comments-title"><i class="fa fa-comment-o"> 最近评论</i></div><div data-num-items="5" data-show-avatars="0" data-show-time="1" data-show-admin="0" data-excerpt-length="32" data-show-title="1" class="ds-recent-comments"></div></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">活着.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>var duoshuoQuery = {short_name:'hanghanghang'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
