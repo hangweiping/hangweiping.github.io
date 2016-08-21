@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[前端要知道的知识点]]></title>
+      <url>http://hangweiping.github.io/2016/07/05/%E5%89%8D%E7%AB%AF%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+      <content type="html"><![CDATA[<p><img src="../images/HTML常用标签.jpg" alt=""></p>
+<a id="more"></a>
+<h2 id="1、HTML-HTML5基础："><a href="#1、HTML-HTML5基础：" class="headerlink" title="1、HTML/HTML5基础："></a>1、HTML/HTML5基础：</h2><p><code>1.0、</code>语义化<code>H5</code>标签<br><code>1.1</code>、H5引进了一些新的标签，特别注意<code>article、header、footer、aside、nav</code>等，注意<code>HTML</code>的标题结构<br><code>1.2、</code>理解浏览器解析<code>HTML</code>的过程，理解<code>DOM</code>的树形结构，及相应<code>API</code><br><code>1.3、</code>理解<code>HTML</code>标签在各个浏览器上的默认样式（代理样式），理解CSS中的重置样式表的概念<br><code>1.4、</code>理解<code>Canvas、SVG、video</code>等功能性标签<br><code>1.5</code>、理解<code>form、iframe</code>标签，理解文件提交过程<br>推荐书籍：</p>
+<p>推荐书籍：<br>A、《HTML5秘籍》</p>
+<h2 id="2、高健壮性CSS"><a href="#2、高健壮性CSS" class="headerlink" title="2、高健壮性CSS"></a>2、高健壮性<code>CSS</code></h2><p><code>2.1、</code>学习基础知识，包括大部分常用属性、选择器的用法，要对大多数标签有个基础概念,在日常使用的基础上，尝试学习浏览器兼容性问题，要知道兼容性的主要问题及解决方法<br><code>2.2、</code>深入理解盒子模型，区分块级元素、行内元素，有几个比较重要的属性：<code>display、float、position</code>，一定要弄清楚区分盒子、行内盒子的概念另外可以考虑学一些预编译语言：<code>sass、less</code>，都很简单<br><code>2.3、</code>学习常用框架，可以使用<code>bootstrap</code>构建项目<br><code>2.4、</code>学习框架的代码组织方式包括：<code>12</code>格栅系统、组件化、组件的风格化等<br><code>2.5、</code>学习<code>CSS3</code>的新功能，特别是动画效果、选择器<br><code>2.6、</code>认真学习一些<code>CSS</code>对象化思想，学习编写简洁性、高复用性、高健壮性的<code>CSS</code><br><code>2.7、</code>有空的话，可以看看所谓的扁平化设计，还有简洁性<br><code>2.8、</code>理解<code>CSSOM、render、reflow、CSS</code>性能、<code>CSS</code>阻塞概念<br>学习方法：<br>1、多看别人的代码，一些设计的不错的网站就是很好的学习素材，比如拉勾网<br>2、一定要学会使用grunt、gulp压缩CSS<br>3、display + position + float 可以组合出很复杂的效果，多想想盒子模型<br>4、尝试在不用float，且position不为absolute的情况下实现等高、等宽等布局</p>
+<p>推荐书籍：<br>1、《图灵程序设计丛书:HTML5与CSS3设计模式》<br>2、《Web开发技术丛书:深入理解Bootstrap》<br>3、《高流量网站CSS开发技术》<br>4、《CSS设计彻底研究》 这个一定要<br>5、《Web开发技术丛书:深入理解Bootstrap》<br>6、可以找一些专门讲SASS的书，但是我没找到<br>7、《CSS权威指南(第3版)》</p>
+<h2 id="3、深入学习JS"><a href="#3、深入学习JS" class="headerlink" title="3、深入学习JS"></a>3、深入学习JS</h2><p><code>3.1、</code>重新学习JS语法，注意：表达式（特别是函数访问表达式）、语句、类型（包括类型判断)注意，这个时候主要倾向于“原生”JS哦，不要使用框架<br><code>3.2、</code>深入理解JS的“一级函数”、对象、类的概念,学会使用函数来构造类、闭包，学会用面向对象的方式组织代码<br><code>3.3、</code>深入理解JS的作用域、作用域链、this对象（在各种调用形式中，this的指向）理解函数的各种调用方法（call、apply、bind等）<br><code>3.4、</code>理解对象、数组的概念<br>理解对象的“[]”调用，理解对象是一种“特殊数组”<br>理解for语句的用法<br>深入理解JS中原始值、包装对象的概念（重要）<br><code>3.5、</code>学习一些常用框架的使用方法，包括：<code>JQUERY、underscore、EXTJS，</code>加分点有：<code>vuejs、react,angularjs、ejs、jade</code><br>通过比较多个框架的使用方法，想清楚“JS语言极其灵活”这一事实<br>总结常见用法，提高学习速度<br>学习模块化开发（使用require.js、sea.js等）<br><code>3.6、</code>适当看一些著名框架的源码，比如jQuery（不建议看angularjs，太复杂了）<br>重要的是学习框架中代码的组织形式，即设计模式<br><code>3.7、</code>了解JS解释、运行过程，理解JS的单线程概念<br>深入理解JS事件、异步、阻塞概念<br><code>3.8、</code>理解浏览器组成部件，理解V8的概念<br>学习V8的解释-运行过程<br>在V8基础上，学会如何提高JS性能<br>学会使用chrome的profile进行内存泄露分析<br>学习方法：<br>1、提高对自己的要求，要有代码洁癖<br>2、适当的时候看看优秀框架的源码，特别是框架的架构模式、设计模式<br>3、多学学设计模式<br>4、学习原生JS、DOM、BOM、Ajax<br>推荐书籍：<br>1、《O’Reilly精品图书系列:​JavaScript权威指南(​第6版)》 必看<br>2、《JavaScript设计模式》<br>3、《WebKit技术内幕》<br>4、《JavaScript框架高级编​程:应用Prototype YUI Ext JS Dojo MooTools》<br>5、《用AngularJS开发下一代Web应用》<br>6、跨终端<br>6.1、理解混合APP的概念<br>6.2、理解网页在各类终端上的表现<br>6.3、理解网页与原生app的区同，重在约束<br>6.4、理解单页网站，特别要规避页面的内存泄露问题<br>6.5、入门nodejs，对其有个基础概念，知道它能做什么，缺点是什么<br>推荐书籍：<br>1、《单页Web应用:JavaScript从前端到后端 》<br>2、《Web 2.0界面设计模式》<br>3、《响应式Web设计:HTML5和​CSS3实战》<br>5、工具<br>学会使用grunt进行JS、CSS、HTML 压缩，特别是模块化js开发时候的压缩<br>会用PS进行切图、保存icon<br>入手sublime、webstorm<br>学会使用chrome调试面板，特别是：console、network、profile、element</p>
+<hr>
+<p><strong>进阶</strong>：</p>
+<h2 id="4、性能"><a href="#4、性能" class="headerlink" title="4、性能"></a>4、性能</h2><p>1.1、理解资源加载的过程<br>包括：TCP握手连接、HTTP请求报文、HTTP回复报文<br>1.2、理解资源加载的性能约束，包括：TCP连接限制、TCP慢启动<br>1.3、理解CSS文件、JS文件压缩，理解不同文件放在页面不同位置后对性能的影响<br>1.4、理解CDN加速<br>1.5、学会使用HTTP头控制资源缓存，理解cache-control、expire、max-age、ETag对缓存的影响<br>1.6、深入理解浏览器的render过程<br>推荐书籍：<br>1、《Web性能权威指南》<br>2、雅虎网站页面性能优化的34条黄金守则</p>
+<h2 id="5、http及TCP协议族"><a href="#5、http及TCP协议族" class="headerlink" title="5、http及TCP协议族"></a>5、http及TCP协议族</h2><p><code>2.1</code>、学习http协议，理解http请求-响应模式<br><code>2.2、</code>理解http是应用层协议，它是构建在TCP/IP协议上的<br><code>2.3、</code>理解http报文（请求-响应报文）<br><code>2.4、</code>理解http代理、缓存、网关等概念，指定如何控制缓存<br><code>2.5、</code>理解http协议内容，包括：状态码、http头、长连接（http1.1）<br><code>2.6、</code>学习http服务器的工作模型，对静态文件、CGI、DHTML的处理流程有个大致概念</p>
+<p>推荐书籍：<br>1、《HTTP权威指南》<br>2、《TCP/IP详解》<br>3、《图解TCP/IP(第5版)》</p>
+<h2 id="6、安全性"><a href="#6、安全性" class="headerlink" title="6、安全性"></a>6、安全性</h2><p><code>XSS、SQL</code>注入</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[CSS设计指南-读书笔记]]></title>
       <url>http://hangweiping.github.io/2016/07/03/CSS%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>只要能把本书读懂、吃透，自称“CSS老手”绝对没人敢说你吹牛皮。要是能将书中给出的建议和提示融会贯通地运用到自己的项目当中，那“CSS高手”这顶桂冠也将非你莫属！<br><a id="more"></a></p>
@@ -2328,7 +2347,7 @@ root@e218edb10161:/# //在运行的容器内使用 apt-get update 命令进行�
 </code></pre><p>隐式参考链接：使用空标识 [] ，在跳转地址处使用链接文字作为标识。</p>
 <p><a href="http://google.com/" title="Google Inc." target="_blank" rel="external">Google</a>  </p>
 <p>自动链接：对于网址和电子邮件信箱，只要是用尖括号包起来，Markdown 就会自动把它转成链接，链接文字和跳转地址相同。  </p>
-<p><a href="http://www.cnblogs.com/zhuyuanhao/" target="_blank" rel="external">http://www.cnblogs.com/zhuyuanhao/</a><br><a href="&#109;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x61;&#x64;&#x64;&#114;&#101;&#115;&#115;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#109;">&#x61;&#x64;&#x64;&#114;&#101;&#115;&#115;&#64;&#x65;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#109;</a><br><a href="http://www.cnblogs.com/zhuyuanhao/" target="_blank" rel="external">http://www.cnblogs.com/zhuyuanhao/</a>  </p>
+<p><a href="http://www.cnblogs.com/zhuyuanhao/" target="_blank" rel="external">http://www.cnblogs.com/zhuyuanhao/</a><br><a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;">&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#x40;&#101;&#120;&#x61;&#x6d;&#112;&#x6c;&#101;&#x2e;&#x63;&#x6f;&#109;</a><br><a href="http://www.cnblogs.com/zhuyuanhao/" target="_blank" rel="external">http://www.cnblogs.com/zhuyuanhao/</a>  </p>
 <p>address@example.com<br>图片用于在当前页面显示图片，也包含行内式和参考式，只需要在链接的样式前加一个惊叹号 ! ，就会被识别为图片。可以使用相对路径引用本地的图片，也能使用 url 引用其他网站的图片。不过到目前为止，Markdown 还没有办法指定图片的宽高。  </p>
 <p>行内式：<br><img src="/path/to/img.jpg" alt="Alt text" title="Optional title"><br>参考式：<br><img src="url/to/image" alt="Alt text" title="Optional title attribute">    </p>
 <h2 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h2><p>在需要目录出现的地方（一般在文章一开始）放置一个标记，这样会自动生成一个嵌套的包含所有标题的列表。默认的标记是[TOC]。</p>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hangweiping.github.io/"/>
-  <updated>2016-08-21T11:12:31.000Z</updated>
+  <updated>2016-08-21T11:31:59.000Z</updated>
   <id>http://hangweiping.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端要知道的知识点</title>
+    <link href="http://hangweiping.github.io/2016/07/05/%E5%89%8D%E7%AB%AF%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    <id>http://hangweiping.github.io/2016/07/05/前端要知道的知识点/</id>
+    <published>2016-07-05T10:13:58.000Z</published>
+    <updated>2016-08-21T11:31:59.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;../images/HTML常用标签.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;1、HTML-HTML5基础：&quot;&gt;&lt;a href=&quot;#1、HTML-HTML5基础：&quot; class=&quot;headerlink&quot; title=&quot;1、HTML/HTML5基础：&quot;&gt;&lt;/a&gt;1、HTML/HTML5基础：&lt;/h2&gt;&lt;p&gt;&lt;code&gt;1.0、&lt;/code&gt;语义化&lt;code&gt;H5&lt;/code&gt;标签&lt;br&gt;&lt;code&gt;1.1&lt;/code&gt;、H5引进了一些新的标签，特别注意&lt;code&gt;article、header、footer、aside、nav&lt;/code&gt;等，注意&lt;code&gt;HTML&lt;/code&gt;的标题结构&lt;br&gt;&lt;code&gt;1.2、&lt;/code&gt;理解浏览器解析&lt;code&gt;HTML&lt;/code&gt;的过程，理解&lt;code&gt;DOM&lt;/code&gt;的树形结构，及相应&lt;code&gt;API&lt;/code&gt;&lt;br&gt;&lt;code&gt;1.3、&lt;/code&gt;理解&lt;code&gt;HTML&lt;/code&gt;标签在各个浏览器上的默认样式（代理样式），理解CSS中的重置样式表的概念&lt;br&gt;&lt;code&gt;1.4、&lt;/code&gt;理解&lt;code&gt;Canvas、SVG、video&lt;/code&gt;等功能性标签&lt;br&gt;&lt;code&gt;1.5&lt;/code&gt;、理解&lt;code&gt;form、iframe&lt;/code&gt;标签，理解文件提交过程&lt;br&gt;推荐书籍：&lt;/p&gt;
+&lt;p&gt;推荐书籍：&lt;br&gt;A、《HTML5秘籍》&lt;/p&gt;
+&lt;h2 id=&quot;2、高健壮性CSS&quot;&gt;&lt;a href=&quot;#2、高健壮性CSS&quot; class=&quot;headerlink&quot; title=&quot;2、高健壮性CSS&quot;&gt;&lt;/a&gt;2、高健壮性&lt;code&gt;CSS&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;2.1、&lt;/code&gt;学习基础知识，包括大部分常用属性、选择器的用法，要对大多数标签有个基础概念,在日常使用的基础上，尝试学习浏览器兼容性问题，要知道兼容性的主要问题及解决方法&lt;br&gt;&lt;code&gt;2.2、&lt;/code&gt;深入理解盒子模型，区分块级元素、行内元素，有几个比较重要的属性：&lt;code&gt;display、float、position&lt;/code&gt;，一定要弄清楚区分盒子、行内盒子的概念另外可以考虑学一些预编译语言：&lt;code&gt;sass、less&lt;/code&gt;，都很简单&lt;br&gt;&lt;code&gt;2.3、&lt;/code&gt;学习常用框架，可以使用&lt;code&gt;bootstrap&lt;/code&gt;构建项目&lt;br&gt;&lt;code&gt;2.4、&lt;/code&gt;学习框架的代码组织方式包括：&lt;code&gt;12&lt;/code&gt;格栅系统、组件化、组件的风格化等&lt;br&gt;&lt;code&gt;2.5、&lt;/code&gt;学习&lt;code&gt;CSS3&lt;/code&gt;的新功能，特别是动画效果、选择器&lt;br&gt;&lt;code&gt;2.6、&lt;/code&gt;认真学习一些&lt;code&gt;CSS&lt;/code&gt;对象化思想，学习编写简洁性、高复用性、高健壮性的&lt;code&gt;CSS&lt;/code&gt;&lt;br&gt;&lt;code&gt;2.7、&lt;/code&gt;有空的话，可以看看所谓的扁平化设计，还有简洁性&lt;br&gt;&lt;code&gt;2.8、&lt;/code&gt;理解&lt;code&gt;CSSOM、render、reflow、CSS&lt;/code&gt;性能、&lt;code&gt;CSS&lt;/code&gt;阻塞概念&lt;br&gt;学习方法：&lt;br&gt;1、多看别人的代码，一些设计的不错的网站就是很好的学习素材，比如拉勾网&lt;br&gt;2、一定要学会使用grunt、gulp压缩CSS&lt;br&gt;3、display + position + float 可以组合出很复杂的效果，多想想盒子模型&lt;br&gt;4、尝试在不用float，且position不为absolute的情况下实现等高、等宽等布局&lt;/p&gt;
+&lt;p&gt;推荐书籍：&lt;br&gt;1、《图灵程序设计丛书:HTML5与CSS3设计模式》&lt;br&gt;2、《Web开发技术丛书:深入理解Bootstrap》&lt;br&gt;3、《高流量网站CSS开发技术》&lt;br&gt;4、《CSS设计彻底研究》 这个一定要&lt;br&gt;5、《Web开发技术丛书:深入理解Bootstrap》&lt;br&gt;6、可以找一些专门讲SASS的书，但是我没找到&lt;br&gt;7、《CSS权威指南(第3版)》&lt;/p&gt;
+&lt;h2 id=&quot;3、深入学习JS&quot;&gt;&lt;a href=&quot;#3、深入学习JS&quot; class=&quot;headerlink&quot; title=&quot;3、深入学习JS&quot;&gt;&lt;/a&gt;3、深入学习JS&lt;/h2&gt;&lt;p&gt;&lt;code&gt;3.1、&lt;/code&gt;重新学习JS语法，注意：表达式（特别是函数访问表达式）、语句、类型（包括类型判断)注意，这个时候主要倾向于“原生”JS哦，不要使用框架&lt;br&gt;&lt;code&gt;3.2、&lt;/code&gt;深入理解JS的“一级函数”、对象、类的概念,学会使用函数来构造类、闭包，学会用面向对象的方式组织代码&lt;br&gt;&lt;code&gt;3.3、&lt;/code&gt;深入理解JS的作用域、作用域链、this对象（在各种调用形式中，this的指向）理解函数的各种调用方法（call、apply、bind等）&lt;br&gt;&lt;code&gt;3.4、&lt;/code&gt;理解对象、数组的概念&lt;br&gt;理解对象的“[]”调用，理解对象是一种“特殊数组”&lt;br&gt;理解for语句的用法&lt;br&gt;深入理解JS中原始值、包装对象的概念（重要）&lt;br&gt;&lt;code&gt;3.5、&lt;/code&gt;学习一些常用框架的使用方法，包括：&lt;code&gt;JQUERY、underscore、EXTJS，&lt;/code&gt;加分点有：&lt;code&gt;vuejs、react,angularjs、ejs、jade&lt;/code&gt;&lt;br&gt;通过比较多个框架的使用方法，想清楚“JS语言极其灵活”这一事实&lt;br&gt;总结常见用法，提高学习速度&lt;br&gt;学习模块化开发（使用require.js、sea.js等）&lt;br&gt;&lt;code&gt;3.6、&lt;/code&gt;适当看一些著名框架的源码，比如jQuery（不建议看angularjs，太复杂了）&lt;br&gt;重要的是学习框架中代码的组织形式，即设计模式&lt;br&gt;&lt;code&gt;3.7、&lt;/code&gt;了解JS解释、运行过程，理解JS的单线程概念&lt;br&gt;深入理解JS事件、异步、阻塞概念&lt;br&gt;&lt;code&gt;3.8、&lt;/code&gt;理解浏览器组成部件，理解V8的概念&lt;br&gt;学习V8的解释-运行过程&lt;br&gt;在V8基础上，学会如何提高JS性能&lt;br&gt;学会使用chrome的profile进行内存泄露分析&lt;br&gt;学习方法：&lt;br&gt;1、提高对自己的要求，要有代码洁癖&lt;br&gt;2、适当的时候看看优秀框架的源码，特别是框架的架构模式、设计模式&lt;br&gt;3、多学学设计模式&lt;br&gt;4、学习原生JS、DOM、BOM、Ajax&lt;br&gt;推荐书籍：&lt;br&gt;1、《O’Reilly精品图书系列:​JavaScript权威指南(​第6版)》 必看&lt;br&gt;2、《JavaScript设计模式》&lt;br&gt;3、《WebKit技术内幕》&lt;br&gt;4、《JavaScript框架高级编​程:应用Prototype YUI Ext JS Dojo MooTools》&lt;br&gt;5、《用AngularJS开发下一代Web应用》&lt;br&gt;6、跨终端&lt;br&gt;6.1、理解混合APP的概念&lt;br&gt;6.2、理解网页在各类终端上的表现&lt;br&gt;6.3、理解网页与原生app的区同，重在约束&lt;br&gt;6.4、理解单页网站，特别要规避页面的内存泄露问题&lt;br&gt;6.5、入门nodejs，对其有个基础概念，知道它能做什么，缺点是什么&lt;br&gt;推荐书籍：&lt;br&gt;1、《单页Web应用:JavaScript从前端到后端 》&lt;br&gt;2、《Web 2.0界面设计模式》&lt;br&gt;3、《响应式Web设计:HTML5和​CSS3实战》&lt;br&gt;5、工具&lt;br&gt;学会使用grunt进行JS、CSS、HTML 压缩，特别是模块化js开发时候的压缩&lt;br&gt;会用PS进行切图、保存icon&lt;br&gt;入手sublime、webstorm&lt;br&gt;学会使用chrome调试面板，特别是：console、network、profile、element&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;进阶&lt;/strong&gt;：&lt;/p&gt;
+&lt;h2 id=&quot;4、性能&quot;&gt;&lt;a href=&quot;#4、性能&quot; class=&quot;headerlink&quot; title=&quot;4、性能&quot;&gt;&lt;/a&gt;4、性能&lt;/h2&gt;&lt;p&gt;1.1、理解资源加载的过程&lt;br&gt;包括：TCP握手连接、HTTP请求报文、HTTP回复报文&lt;br&gt;1.2、理解资源加载的性能约束，包括：TCP连接限制、TCP慢启动&lt;br&gt;1.3、理解CSS文件、JS文件压缩，理解不同文件放在页面不同位置后对性能的影响&lt;br&gt;1.4、理解CDN加速&lt;br&gt;1.5、学会使用HTTP头控制资源缓存，理解cache-control、expire、max-age、ETag对缓存的影响&lt;br&gt;1.6、深入理解浏览器的render过程&lt;br&gt;推荐书籍：&lt;br&gt;1、《Web性能权威指南》&lt;br&gt;2、雅虎网站页面性能优化的34条黄金守则&lt;/p&gt;
+&lt;h2 id=&quot;5、http及TCP协议族&quot;&gt;&lt;a href=&quot;#5、http及TCP协议族&quot; class=&quot;headerlink&quot; title=&quot;5、http及TCP协议族&quot;&gt;&lt;/a&gt;5、http及TCP协议族&lt;/h2&gt;&lt;p&gt;&lt;code&gt;2.1&lt;/code&gt;、学习http协议，理解http请求-响应模式&lt;br&gt;&lt;code&gt;2.2、&lt;/code&gt;理解http是应用层协议，它是构建在TCP/IP协议上的&lt;br&gt;&lt;code&gt;2.3、&lt;/code&gt;理解http报文（请求-响应报文）&lt;br&gt;&lt;code&gt;2.4、&lt;/code&gt;理解http代理、缓存、网关等概念，指定如何控制缓存&lt;br&gt;&lt;code&gt;2.5、&lt;/code&gt;理解http协议内容，包括：状态码、http头、长连接（http1.1）&lt;br&gt;&lt;code&gt;2.6、&lt;/code&gt;学习http服务器的工作模型，对静态文件、CGI、DHTML的处理流程有个大致概念&lt;/p&gt;
+&lt;p&gt;推荐书籍：&lt;br&gt;1、《HTTP权威指南》&lt;br&gt;2、《TCP/IP详解》&lt;br&gt;3、《图解TCP/IP(第5版)》&lt;/p&gt;
+&lt;h2 id=&quot;6、安全性&quot;&gt;&lt;a href=&quot;#6、安全性&quot; class=&quot;headerlink&quot; title=&quot;6、安全性&quot;&gt;&lt;/a&gt;6、安全性&lt;/h2&gt;&lt;p&gt;&lt;code&gt;XSS、SQL&lt;/code&gt;注入&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;../images/HTML常用标签.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="前端" scheme="http://hangweiping.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS设计指南-读书笔记</title>
@@ -965,9 +998,9 @@
     
       <category term="docker" scheme="http://hangweiping.github.io/tags/docker/"/>
     
-      <category term="git" scheme="http://hangweiping.github.io/tags/git/"/>
-    
       <category term="gitlab" scheme="http://hangweiping.github.io/tags/gitlab/"/>
+    
+      <category term="git" scheme="http://hangweiping.github.io/tags/git/"/>
     
   </entry>
   
@@ -2582,7 +2615,7 @@ root@e218edb10161:/# //在运行的容器内使用 apt-get update 命令进行�
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;隐式参考链接：使用空标识 [] ，在跳转地址处使用链接文字作为标识。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://google.com/&quot; title=&quot;Google Inc.&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;自动链接：对于网址和电子邮件信箱，只要是用尖括号包起来，Markdown 就会自动把它转成链接，链接文字和跳转地址相同。  &lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/zhuyuanhao/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/zhuyuanhao/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#108;&amp;#x74;&amp;#111;&amp;#58;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#x65;&amp;#x78;&amp;#97;&amp;#x6d;&amp;#x70;&amp;#108;&amp;#x65;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&quot;&gt;&amp;#x61;&amp;#x64;&amp;#x64;&amp;#114;&amp;#101;&amp;#115;&amp;#115;&amp;#64;&amp;#x65;&amp;#x78;&amp;#97;&amp;#x6d;&amp;#x70;&amp;#108;&amp;#x65;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/zhuyuanhao/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/zhuyuanhao/&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/zhuyuanhao/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/zhuyuanhao/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;&amp;#109;&amp;#x61;&amp;#105;&amp;#108;&amp;#116;&amp;#x6f;&amp;#x3a;&amp;#97;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#x73;&amp;#x73;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;&amp;#x6d;&amp;#112;&amp;#x6c;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#109;&quot;&gt;&amp;#97;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#x73;&amp;#x73;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;&amp;#x6d;&amp;#112;&amp;#x6c;&amp;#101;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/zhuyuanhao/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/zhuyuanhao/&lt;/a&gt;  &lt;/p&gt;
 &lt;p&gt;address@example.com&lt;br&gt;图片用于在当前页面显示图片，也包含行内式和参考式，只需要在链接的样式前加一个惊叹号 ! ，就会被识别为图片。可以使用相对路径引用本地的图片，也能使用 url 引用其他网站的图片。不过到目前为止，Markdown 还没有办法指定图片的宽高。  &lt;/p&gt;
 &lt;p&gt;行内式：&lt;br&gt;&lt;img src=&quot;/path/to/img.jpg&quot; alt=&quot;Alt text&quot; title=&quot;Optional title&quot;&gt;&lt;br&gt;参考式：&lt;br&gt;&lt;img src=&quot;url/to/image&quot; alt=&quot;Alt text&quot; title=&quot;Optional title attribute&quot;&gt;    &lt;/p&gt;
 &lt;h2 id=&quot;自动生成目录&quot;&gt;&lt;a href=&quot;#自动生成目录&quot; class=&quot;headerlink&quot; title=&quot;自动生成目录&quot;&gt;&lt;/a&gt;自动生成目录&lt;/h2&gt;&lt;p&gt;在需要目录出现的地方（一般在文章一开始）放置一个标记，这样会自动生成一个嵌套的包含所有标题的列表。默认的标记是[TOC]。&lt;/p&gt;
